@@ -1,0 +1,115 @@
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body,
+html {
+  /* background: blue; */
+  /* height: 100vh; */
+  width: 40vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Grid modellen */
+
+.container {
+  height: 100vh;
+  border: 3px solid black;
+  /* align-items: center; */
+  /* justify-items: center; */
+
+  display: grid;
+  grid-template-columns: 50% auto;
+  grid-template-rows: 10% auto 20% 15% 10%;
+  grid-template-areas:
+    "header header"
+    "aside1 section1"
+    "aside1 main"
+    "aside1 section2"
+    "footer footer";
+}
+
+aside {
+  grid-area: aside1;
+  background-color: #ffffff;
+  margin-top: 1rem;
+}
+
+header {
+  grid-area: header;
+  background-color: #7baa20;
+  color: white;
+}
+
+main {
+  grid-area: main;
+  background-color: #e3e5e5;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #4b96cf;
+  color: white;
+}
+
+#section1 {
+  grid-area: section1;
+  background-color: #eeeeee;
+}
+
+#section2 {
+  grid-area: section2;
+  background-color: #c3ccbf;
+  color: #1d4d08;
+  padding: 0rem 1rem 1rem 1rem;
+}
+
+/* Grid modellen slut *******************************************************/
+
+.lista {
+  width: 98%;
+  height: 98%vh;
+  /* border: 1px solid gray; */
+  padding: 10px;
+  color: rgb(114, 114, 114);
+}
+
+.vaning {
+  font-weight: 600;
+  /* font-size: 4.3rem; */
+  padding-top: 1rem;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgb(243, 243, 243);
+}
+
+.sidinfo p {
+  font-size: xx-large;
+  padding-right: 5rem;
+}
+
+p {
+  font-size: small;
+}
+
+hr {
+  padding-right: 2rem;
+}
+
+.namn {
+  padding-left: 1rem;
+}
+
+.nummer {
+  padding-right: 2rem;
+}
+
+.rad {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.4rem;
+}

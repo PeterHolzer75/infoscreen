@@ -1,0 +1,74 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block content%}
+
+<!-- 
+<div class="sidinfo">
+    <p>Hostname: {{hn}}</p>
+    <span>IP-address: {{ip}}</span>
+    <span> Antal adresser: {{antal}}</span>
+</div> -->
+
+
+<div class="container">
+
+    <aside>{{boendelista|safe}}</aside>
+
+    <header>
+        <div class="adress">
+            <span class="gatunamn-header">{{gatuadress}}</span>
+            <div class="balk"></div>
+            <h3>VÄLKOMMEN!</h3>
+        </div>
+        <div class="logotyp">
+            <img src="{% static 'img/HHem_logo_gron_transp_vit.png' %}" width="110px" height="auto" alt=" logotyp">
+        </div>
+    </header>
+
+    <section id="section1">
+        <!-- <img src="{% static 'img/burkar.jpg'%}" alt="Bild på färgburkar"> -->
+    </section>
+
+
+    <main>
+        <h3>KONTAKTA OSS</h3>
+        {% for resurs in resurser %}
+
+        {% if resurs.ResurstypSystemname == 'KV' %}
+        <h4>Kundansvarig</h4>
+        <p>{{resurs.ResursNamn}} <br>
+            {{resurs.Telefonnummer}} <br>
+            {{resurs.Epostadress}}
+        </p>
+        {% endif %}
+
+        {% if resurs.ResurstypSystemname == 'FV' %}
+        <h4>Fastighetsvärd</h4>
+        <p>{{resurs.ResursNamn}} <br>
+            {{resurs.Telefonnummer}} <br>
+            {{resurs.Epostadress}}
+        </p>
+        {% endif %}
+
+        {% endfor %}
+
+
+    </main>
+
+    <section id="section2">
+        <h3>SÅ HÄR FELANMÄLER DU</h3>
+        <p>Felanmälan gör du lättast på Mina Sidor. Där är det öppet alla dagens timmar.
+            Du kan även ringa in din felamälan till vår Kundservice 042-20 80 00.
+            Är felet akut och uppstår under kvällar och helger ringer du fastighetsjouren på 042-20 82 00.
+        </p>
+    </section>
+
+    <footer>
+        <h1>9:30</h1>
+        <h3>2020-05-10</h3>
+    </footer>
+
+
+</div>
+
+{% endblock content%}

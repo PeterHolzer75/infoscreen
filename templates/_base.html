@@ -1,0 +1,66 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <me- Förhindra sökmotor indixering -->
+        <meta name="robots" content="noindex">
+
+        <!-- Bootstrap CSS -->
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <!-- <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" /> -->
+        <title>{% block title %}Helsingborgshem{% endblock title %}</title>
+</head>
+
+<body>
+
+    <!-- -------------------------------------------Här kommer all context renders ut --------------------------------------------- -->
+    {% block content %}{% endblock %}
+    <!-- --------------------------------------------------------------------------------- ---------------------------------------- -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <!-- Behövs för att ladda upp bilder -->
+
+    {% comment %}
+    <script src=" {% static 'js/jquery-3.1.1.min.js' %}">
+    </script>
+
+    <!-- START Code to show window size -->
+
+    <script type="text/javascript">
+        function jqUpdateSize()
+        {
+            // Get the dimensions of the viewport
+            var width = $(window).width();
+            var height = $(window).height();
+
+            $('#jqWidth').html(width);
+            $('#jqHeight').html(height);
+        };
+        $(document).ready(jqUpdateSize); // When the page first loads
+        $(window).resize(jqUpdateSize); // When the browser changes size
+    </script>
+
+    <div
+        style="position: fixed; top: 0; left: 0; color: #000;background-color: #fff;padding: 0 3px ;z-index: 9999999999;">
+        <p style="float: left; font-size: 10px;">
+            <span id="jqWidth">0</span><br />
+            <span id="jqHeight">0</span>
+        </p>
+    </div><!-- END Code to show window size -->
+    {% endcomment %}
+</body>
+
+</html>

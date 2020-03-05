@@ -1,0 +1,162 @@
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body,
+html {
+  background: black;
+  /* height: 100vh; */
+  width: 40vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Grid modellen */
+
+.container {
+  height: 100vh;
+  background: white;
+  border: 30px solid white;
+  /* align-items: center; */
+  /* justify-items: center; */
+
+  display: grid;
+  grid-template-columns: 50% auto;
+  grid-template-rows: 10% auto 20% 15% 10%;
+  grid-template-areas:
+    "header header"
+    "aside1 section1"
+    "aside1 main"
+    "aside1 section2"
+    "footer footer";
+}
+
+.gatunamn-header {
+  font-size: 2.3rem;
+  text-transform: uppercase;
+}
+/* .gatunamn aside {
+  grid-area: aside1;
+  background-color: #ffffff;
+  margin-top: 1rem;
+} */
+
+.adress {
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+aside {
+  grid-area: aside1;
+}
+
+header {
+  grid-area: header;
+  background-color: #7baa20;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.balk {
+  width: 400px;
+  height: 3px;
+  background: white;
+  /* margin-bottom: 5px; */
+}
+
+.adress h3 {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+main {
+  grid-area: main;
+  background-color: #e3e5e5;
+  padding: 0rem 1rem 1rem 1rem;
+  color: rgb(63, 63, 63);
+}
+
+main h3,
+h4 {
+  margin: 3px 3px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #4b96cf;
+  color: white;
+  padding-left: 10px;
+}
+
+#section1 {
+  grid-area: section1;
+  background-color: #f5f5f5;
+  padding: 0rem 1rem 1rem 1rem;
+}
+#section1 img {
+  width: 100%;
+}
+
+.logotyp {
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+#section2 {
+  grid-area: section2;
+  background-color: #c3ccbf;
+  color: #1d4d08;
+  padding: 0rem 1rem 1rem 1rem;
+}
+
+/* Grid modellen slut *******************************************************/
+
+.lista {
+  width: 98%;
+  height: 98%vh;
+  /* border: 1px solid gray; */
+  padding: 10px;
+  color: rgb(114, 114, 114);
+}
+
+.vaning {
+  font-weight: 600;
+  /* font-size: 4.3rem; */
+  padding-top: 1rem;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgb(243, 243, 243);
+}
+
+.sidinfo p {
+  font-size: xx-large;
+  padding-right: 5rem;
+}
+
+p {
+  font-size: small;
+}
+
+hr {
+  padding-right: 2rem;
+}
+
+.namn {
+  padding-left: 1rem;
+}
+
+.nummer {
+  padding-right: 2rem;
+}
+
+.rad {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.4rem;
+}

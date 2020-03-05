@@ -1,0 +1,30 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block content%}
+<br>
+
+<p>Hostname: {{hn}}</p>
+<p>IP-address: {{ip}}</p>
+<p> Antal adresser: {{antal}}</p>
+
+<div class="container">
+    <div class="lista">
+        {% for d in data %}
+            {% comment %} <div class="vaning" style="fontsize: {{fs_vaning}}rem;"> {% endcomment %}
+
+        
+            <div class="vaning" style="font-size: {{fs_vaning}}rem;">
+                {{d.Vaning}}
+            </div>
+
+            <div class="rad">
+            <div class="namn" style="font-size: {{fs_namn}}rem;}">{{d.Kund1Namn}}{%if d.Kund2Namn %}, {{d.Kund2Namn}}{% endif %}</div>
+            <div class="nummer">{{d.Lagenhetsnummer}}</div>
+
+            </div>
+        {% endfor  %}
+    </div>
+    <hr>
+</div>
+
+{% endblock content%}
