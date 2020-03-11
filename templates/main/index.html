@@ -18,7 +18,7 @@
         <div class="adress">
             <span class="gatunamn-header">{{gatuadress}}</span>
             <div class="balk"></div>
-            <h3>VÄLKOMMEN!</h3>
+            <div class='welcome'>VÄLKOMMEN!</div>
         </div>
         <div class="logotyp">
             <img src="{% static 'img/HHem_logo_gron_transp_vit.png' %}" width="110px" height="auto" alt=" logotyp">
@@ -31,7 +31,7 @@
 
 
     <main>
-        <h3>KONTAKTA OSS</h3>
+        <div class="cardtitle">KONTAKTA OSS</div>
         {% for resurs in resurser %}
 
         {% if resurs.ResurstypSystemname == 'KV' %}
@@ -47,6 +47,8 @@
         <p>{{resurs.ResursNamn}} <br>
             {{resurs.Telefonnummer}} <br>
             {{resurs.Epostadress}}
+
+            
         </p>
         {% endif %}
 
@@ -56,7 +58,11 @@
     </main>
 
     <section id="section2">
-        <h3>SÅ HÄR FELANMÄLER DU</h3>
+
+        <div class="cardtitle">
+            SÅ HÄR FELANMÄLER DU
+        </div>
+
         <p>Felanmälan gör du lättast på Mina Sidor. Där är det öppet alla dagens timmar.
             Du kan även ringa in din felamälan till vår Kundservice 042-20 80 00.
             Är felet akut och uppstår under kvällar och helger ringer du fastighetsjouren på 042-20 82 00.

@@ -1,3 +1,23 @@
+
+@font-face {
+
+  font-family: 'century';
+  src: 
+  url('../fonts/GOTHIC.TTF') 
+  format('truetype');
+
+}
+@font-face {
+
+  font-family: 'centuryb';
+  src:
+  url('../fonts/GOTHICB.TTF')
+  format('truetype');
+
+
+}
+
+
 * {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -11,14 +31,19 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 32px;   /*base font-size för rem*/
 }
 
 /* Grid modellen */
 
 .container {
-  height: 100vh;
+  height: 1920px;
+  width:1080px;
+  /* height: 960px;
+  width:540px;
+   */
   background: white;
-  border: 30px solid white;
+  /* border: 30px solid white; */
   /* align-items: center; */
   /* justify-items: center; */
 
@@ -32,16 +57,30 @@ html {
     "aside1 section2"
     "footer footer";
 }
-
+.cardtitle{
+  font-family: 'century', sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding-top: 0.5rem;
+  
+}
 .gatunamn-header {
+  font-family: 'century', sans-serif;
   font-size: 2.3rem;
   text-transform: uppercase;
+}
+.welcome {
+  font-family: 'century', sans-serif;
+  font-size: 1rem;
+  padding-top: 5px;;
+  /* text-transform: uppercase; */
 }
 /* .gatunamn aside {
   grid-area: aside1;
   background-color: #ffffff;
   margin-top: 1rem;
 } */
+
 
 .adress {
   padding-top: 15px;
@@ -138,8 +177,8 @@ footer {
   padding-right: 5rem;
 }
 
-p {
-  font-size: small;
+p{
+  font-size: 0.7rem;
 }
 
 hr {
