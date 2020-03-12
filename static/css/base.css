@@ -98,6 +98,11 @@ header {
   justify-content: space-between;
 }
 
+#sektion1 {
+  background: #d4c6e7;
+  margin: ;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -132,6 +137,7 @@ main {
   padding: 0rem 1rem 1rem 1rem;
   color: rgb(63, 63, 63);
 }
+
 main p {
   margin-top: 0.2rem;
 }
@@ -150,8 +156,14 @@ footer {
 
 #section1 {
   grid-area: section1;
-  background-color: #f5f5f5;
+  background-color: #eaeaea;
   padding: 0rem 1rem 1rem 1rem;
+  color: rgb(85, 85, 85);
+}
+
+#section1 img {
+  padding-top: 1rem;
+  width: 100%;
 }
 
 #busstable {
@@ -183,10 +195,14 @@ footer {
 
 .busstable tr {
   background: #dadada;
-  border-bottom: #fafafa solid 1px;
+  /* border-bottom: #fafafa solid 1px; */
 }
+.busstable tr:nth-child(even) {
+  background: #c5c5c5;
+}
+
 .busstable td {
-  padding: 0.1rem;
+  padding: 0.13rem;
   color: #555555;
   font-size: 0.6rem;
 }
