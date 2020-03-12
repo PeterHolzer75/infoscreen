@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 autopep8 = "*"
+pylint = "*"
 
 [packages]
 django = "*"
@@ -12,6 +13,7 @@ whitenoise = "*"
 gunicorn = "*"
 requests = "*"
 lxml = "*"
+skanetrafiken = "*"
 
 [requires]
 python_version = "*"
