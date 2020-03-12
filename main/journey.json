@@ -1,0 +1,188 @@
+[{
+        "SequenceNo": 0,
+        "DepDateTime": "2020-03-12T19:21:00",
+        "ArrDateTime": "2020-03-12T19:24:00",
+        "DepWalkDist": 0,
+        "ArrWalkDist": 0,
+        "NoOfChanges": 0,
+        "Guaranteed": null,
+        "CO2factor": 20,
+        "NoOfZones": 0,
+        "JourneyKey": "26805074940070101233200177300100011",
+        "Distance": 547,
+        "CO2value": "0.038",
+        "RouteLinks": [{
+            "RouteLinkKey": "26805074940070101233200177300100011",
+            "DepDateTime": "2020-03-12T19:21:00",
+            "DepIsTimingPoint": null,
+            "ArrDateTime": "2020-03-12T19:24:00",
+            "ArrIsTimingPoint": null,
+            "RealTime": {
+                "RealTimeInfo": {
+                    "DepTimeDeviation": 1,
+                    "DepDeviationAffect": "NON_CRITICAL",
+                    "ArrTimeDeviation": 0,
+                    "ArrDeviationAffect": "NON_CRITICAL"
+                }
+            },
+            "From": {
+                "Id": "83365",
+                "Name": "Helsingborg Tingshuset"
+            },
+            "To": {
+                "Id": "83241",
+                "Name": "Helsingborg C"
+            },
+            "Line": {
+                "Name": "1",
+                "No": "601",
+                "LineTypeName": "Stadsbuss",
+                "Towards": "Dalhem"
+            }
+        }]
+    },
+    {
+        "SequenceNo": 1,
+        "DepDateTime": "2020-03-12T19:36:00",
+        "ArrDateTime": "2020-03-12T19:39:00",
+        "DepWalkDist": 0,
+        "ArrWalkDist": 0,
+        "NoOfChanges": 0,
+        "Guaranteed": null,
+        "CO2factor": 20,
+        "NoOfZones": 0,
+        "JourneyKey": "26805074940070101233300177300100011",
+        "Distance": 547,
+        "CO2value": "0.038",
+        "RouteLinks": [{
+            "RouteLinkKey": "26805074940070101233300177300100011",
+            "DepDateTime": "2020-03-12T19:36:00",
+            "DepIsTimingPoint": null,
+            "ArrDateTime": "2020-03-12T19:39:00",
+            "ArrIsTimingPoint": null,
+            "RealTime": {},
+            "From": {
+                "Id": "83365",
+                "Name": "Helsingborg Tingshuset"
+            },
+            "To": {
+                "Id": "83241",
+                "Name": "Helsingborg C"
+            },
+            "Line": {
+                "Name": "1",
+                "No": "601",
+                "LineTypeName": "Stadsbuss",
+                "Towards": "Dalhem"
+            }
+        }]
+    },
+    {
+        "SequenceNo": 2,
+        "DepDateTime": "2020-03-12T19:51:00",
+        "ArrDateTime": "2020-03-12T19:54:00",
+        "DepWalkDist": 0,
+        "ArrWalkDist": 0,
+        "NoOfChanges": 0,
+        "Guaranteed": null,
+        "CO2factor": 20,
+        "NoOfZones": 0,
+        "JourneyKey": "26805074940070101233400177300100011",
+        "Distance": 547,
+        "CO2value": "0.038",
+        "RouteLinks": [{
+            "RouteLinkKey": "26805074940070101233400177300100011",
+            "DepDateTime": "2020-03-12T19:51:00",
+            "DepIsTimingPoint": null,
+            "ArrDateTime": "2020-03-12T19:54:00",
+            "ArrIsTimingPoint": null,
+            "RealTime": {},
+            "From": {
+                "Id": "83365",
+                "Name": "Helsingborg Tingshuset"
+            },
+            "To": {
+                "Id": "83241",
+                "Name": "Helsingborg C"
+            },
+            "Line": {
+                "Name": "1",
+                "No": "601",
+                "LineTypeName": "Stadsbuss",
+                "Towards": "Dalhem"
+            }
+        }]
+    },
+    {
+        "SequenceNo": 3,
+        "DepDateTime": "2020-03-12T20:06:00",
+        "ArrDateTime": "2020-03-12T20:09:00",
+        "DepWalkDist": 0,
+        "ArrWalkDist": 0,
+        "NoOfChanges": 0,
+        "Guaranteed": null,
+        "CO2factor": 20,
+        "NoOfZones": 0,
+        "JourneyKey": "26805074940070101233500177300100011",
+        "Distance": 547,
+        "CO2value": "0.038",
+        "RouteLinks": [{
+            "RouteLinkKey": "26805074940070101233500177300100011",
+            "DepDateTime": "2020-03-12T20:06:00",
+            "DepIsTimingPoint": null,
+            "ArrDateTime": "2020-03-12T20:09:00",
+            "ArrIsTimingPoint": null,
+            "RealTime": {},
+            "From": {
+                "Id": "83365",
+                "Name": "Helsingborg Tingshuset"
+            },
+            "To": {
+                "Id": "83241",
+                "Name": "Helsingborg C"
+            },
+            "Line": {
+                "Name": "1",
+                "No": "601",
+                "LineTypeName": "Stadsbuss",
+                "Towards": "Dalhem"
+            }
+        }]
+    },
+    {
+        "SequenceNo": 4,
+        "DepDateTime": "2020-03-12T20:21:00",
+        "ArrDateTime": "2020-03-12T20:24:00",
+        "DepWalkDist": 0,
+        "ArrWalkDist": 0,
+        "NoOfChanges": 0,
+        "Guaranteed": null,
+        "CO2factor": 20,
+        "NoOfZones": 0,
+        "JourneyKey": "26805074940070101233600177300100011",
+        "Distance": 547,
+        "CO2value": "0.038",
+        "RouteLinks": [{
+            "RouteLinkKey": "26805074940070101233600177300100011",
+            "DepDateTime": "2020-03-12T20:21:00",
+            "DepIsTimingPoint": null,
+            "ArrDateTime": "2020-03-12T20:24:00",
+            "ArrIsTimingPoint": null,
+            "RealTime": {},
+            "From": {
+                "Id": "83365",
+                "Name": "Helsingborg Tingshuset"
+            },
+            "To": {
+                "Id": "83241",
+                "Name": "Helsingborg C"
+            },
+            "Line": {
+                "Name": "1",
+                "No": "601",
+                "LineTypeName": "Stadsbuss",
+                "Towards": "Dalhem"
+            }
+        }]
+    }
+]

@@ -58,6 +58,7 @@ footer {
 #section1 {
   grid-area: section1;
   background-color: #eeeeee;
+  height: 100%;
 }
 
 #section2 {

@@ -1,22 +1,11 @@
-
 @font-face {
-
-  font-family: 'century';
-  src: 
-  url('../fonts/GOTHIC.TTF') 
-  format('truetype');
-
+  font-family: "century";
+  src: url("../fonts/GOTHIC.TTF") format("truetype");
 }
 @font-face {
-
-  font-family: 'centuryb';
-  src:
-  url('../fonts/GOTHICB.TTF')
-  format('truetype');
-
-
+  font-family: "centuryb";
+  src: url("../fonts/GOTHICB.TTF") format("truetype");
 }
-
 
 * {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -31,14 +20,14 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 32px;   /*base font-size för rem*/
+  font-size: 32px; /*base font-size för rem*/
 }
 
 /* Grid modellen */
 
 .container {
   height: 1920px;
-  width:1080px;
+  width: 1080px;
   /* height: 960px;
   width:540px;
    */
@@ -49,30 +38,40 @@ html {
 
   display: grid;
   grid-template-columns: 50% auto;
-  grid-template-rows: 10% auto 20% 15% 10%;
+  grid-template-rows: 10% auto 20% 15% 15% 10%;
   grid-template-areas:
     "header header"
     "aside1 section1"
     "aside1 main"
     "aside1 section2"
+    "aside1 busstable"
     "footer footer";
 }
-.cardtitle{
-  font-family: 'century', sans-serif;
+
+.cardtitle {
+  font-family: "century", sans-serif;
   font-size: 1.2rem;
   text-transform: uppercase;
-  padding-top: 0.5rem;
-  
+  padding-top: 0.3rem;
+  color: #575757;
 }
+.cardtitle-2 {
+  /* font-family: "century", sans-serif; */
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding-top: 0.3rem;
+  color: #575757;
+}
+
 .gatunamn-header {
-  font-family: 'century', sans-serif;
+  font-family: "century", sans-serif;
   font-size: 2.3rem;
   text-transform: uppercase;
 }
 .welcome {
-  font-family: 'century', sans-serif;
+  font-family: "century", sans-serif;
   font-size: 1rem;
-  padding-top: 5px;;
+  padding-top: 5px;
   /* text-transform: uppercase; */
 }
 /* .gatunamn aside {
@@ -80,7 +79,6 @@ html {
   background-color: #ffffff;
   margin-top: 1rem;
 } */
-
 
 .adress {
   padding-top: 15px;
@@ -98,6 +96,21 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#showtime {
+  font-size: 2.5rem;
+  padding: 0.3rem;
+}
+#showdate {
+  font-size: 1rem;
+  padding-left: 0.7rem;
+  padding-top: 0.5rem;
 }
 
 .balk {
@@ -119,6 +132,9 @@ main {
   padding: 0rem 1rem 1rem 1rem;
   color: rgb(63, 63, 63);
 }
+main p {
+  margin-top: 0.2rem;
+}
 
 main h3,
 h4 {
@@ -137,6 +153,44 @@ footer {
   background-color: #f5f5f5;
   padding: 0rem 1rem 1rem 1rem;
 }
+
+#busstable {
+  grid-area: busstable;
+  background-color: #dadada;
+  padding: 0rem 1rem 1rem 1rem;
+}
+
+.busstable {
+  margin-top: 0.5rem;
+  font-size: 0.5rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.busstable thead {
+  font-weight: 700;
+  text-align: left;
+}
+
+.linje {
+  text-align: center;
+}
+
+.busstable th {
+  color: gray;
+  padding-bottom: 0.2rem;
+}
+
+.busstable tr {
+  background: #dadada;
+  border-bottom: #fafafa solid 1px;
+}
+.busstable td {
+  padding: 0.1rem;
+  color: #555555;
+  font-size: 0.6rem;
+}
+
 #section1 img {
   width: 100%;
 }
@@ -146,11 +200,21 @@ footer {
   padding-right: 20px;
 }
 
+.wheather {
+  /* padding-top: 1rem; */
+  align-self: center;
+  padding-right: 1rem;
+}
+
 #section2 {
   grid-area: section2;
   background-color: #c3ccbf;
   color: #1d4d08;
   padding: 0rem 1rem 1rem 1rem;
+}
+
+#section2 .cardtitle {
+  color: #1d4d08;
 }
 
 /* Grid modellen slut *******************************************************/
@@ -177,7 +241,7 @@ footer {
   padding-right: 5rem;
 }
 
-p{
+p {
   font-size: 0.7rem;
 }
 

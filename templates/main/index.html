@@ -25,17 +25,45 @@
         </div>
     </header>
 
-    <section id="section1">
-        <!-- <img src="{% static 'img/burkar.jpg'%}" alt="Bild på färgburkar"> -->
+    <section id="sektion1">
     </section>
 
+    <section id="busstable">
+        <!-- <img src="{% static 'img/burkar.jpg'%}" alt="Bild på färgburkar"> -->
+        <div class="cardtitle">Bussförbindelse</div>
+
+        <table class="busstable">
+            <thead>
+                <tr>
+                    <th>Typ</th>
+                    <th class="linje">Linje</th>
+                    <th>Från</th>
+                    <th>Till</th>
+                    <th class="linje">Tid</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for b in busstable %}
+                <tr>
+                    <td>{{b.LineTypeName}}</td>
+                    <td class="linje">{{b.Name}}</td>
+                    <td>{{b.From}}</td>
+                    <td>{{b.Towards}}</td>
+                    <td class="linje">{{b.DepDateTime}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </section>
 
     <main>
         <div class="cardtitle">KONTAKTA OSS</div>
         {% for resurs in resurser %}
 
         {% if resurs.ResurstypSystemname == 'KV' %}
-        <h4>Kundansvarig</h4>
+        <div class="cardtitle-2">Kundvärd</div>
+
         <p>{{resurs.ResursNamn}} <br>
             {{resurs.Telefonnummer}} <br>
             {{resurs.Epostadress}}
@@ -43,12 +71,13 @@
         {% endif %}
 
         {% if resurs.ResurstypSystemname == 'FV' %}
-        <h4>Fastighetsvärd</h4>
+        <div class="cardtitle-2">Fastighetsvärd</div>
+
         <p>{{resurs.ResursNamn}} <br>
             {{resurs.Telefonnummer}} <br>
             {{resurs.Epostadress}}
 
-            
+
         </p>
         {% endif %}
 
@@ -70,8 +99,13 @@
     </section>
 
     <footer>
-        <h1>9:30</h1>
-        <h3>2020-05-10</h3>
+        <div class="footercontainer">
+            <div id="showtime">time</div>
+            <div id="showdate">date</div>
+        </div>
+        <div class="wheather">
+            5 grader, kall och jävligt.
+        </div>
     </footer>
 
 

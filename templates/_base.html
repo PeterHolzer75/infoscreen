@@ -15,30 +15,65 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
             integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> -->
 
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
         <!-- <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" /> -->
         <title>{% block title %}Helsingborgshem{% endblock title %}</title>
+
 </head>
 
-<body>
+<body onload="displayDatetime()">
 
-    <!-- -------------------------------------------Här kommer all context renders ut --------------------------------------------- -->
     {% block content %}{% endblock %}
-    <!-- --------------------------------------------------------------------------------- ---------------------------------------- -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <!-- Behövs för att ladda upp bilder -->
 
+
+
+
+    <!-- Display clock -->
+
+    <script type="text/javascript">
+
+        setInterval(displayDatetime, 1000);
+
+
+        function displayDatetime()
+{
+            var weekday = new Array(7);
+            weekday[0] = "Sön";
+            weekday[1] = "Mon";
+            weekday[2] = "Tis";
+            weekday[3] = "Ons";
+            weekday[4] = "Tor";
+            weekday[5] = "Fre";
+            weekday[6] = "Lör";
+
+            const time = new Date();
+            const hrs = time.getHours();
+            const min = time.getMinutes();
+            const day = weekday[time.getDay()];
+            let datum = time.toLocaleString('sv-SE', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            })
+            document.getElementById('showtime').innerHTML = hrs + ':' + min;
+            document.getElementById('showdate').innerHTML = day + ' ' + datum
+        }
+
+    </script>
+
     {% comment %}
+
     <script src=" {% static 'js/jquery-3.1.1.min.js' %}">
     </script>
 
     <!-- START Code to show window size -->
-
     <script type="text/javascript">
         function jqUpdateSize()
         {
@@ -61,6 +96,7 @@
         </p>
     </div><!-- END Code to show window size -->
     {% endcomment %}
+
 </body>
 
 </html>
