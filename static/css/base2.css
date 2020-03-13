@@ -12,7 +12,6 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-
 body,
 html {
   background: black;
@@ -39,7 +38,7 @@ html {
 
   display: grid;
   grid-template-columns: 50% auto;
-  grid-template-rows: 10% auto 20% 15% 15% 10%;
+  grid-template-rows: 10% auto 20% 15% 20% 10%;
   grid-template-areas:
     "header header"
     "aside1 section1"
@@ -49,25 +48,13 @@ html {
     "footer footer";
 }
 
-.cardheader {
-  display:flex;
-  justify-content: space-between;
-}
-.cardheader img {
-margin-top:0.5rem;
-height:100%;
-/* border:1px black solid; */
-}
-
 .cardtitle {
-  /* border:1px black solid; */
-  font-family: "centuryb", sans-serif;
-  font-size: 1.1rem;
+  font-family: "century", sans-serif;
+  font-size: 1.2rem;
   text-transform: uppercase;
   padding-top: 0.3rem;
   color: #575757;
 }
-
 .cardtitle-2 {
   /* font-family: "century", sans-serif; */
   font-size: 0.9rem;
@@ -113,6 +100,10 @@ header {
 }
 
 
+footer {
+  display: flex;
+  justify-content: space-between;
+}
 
 #showtime {
   font-size: 2.5rem;
@@ -139,7 +130,7 @@ header {
 
 main {
   grid-area: main;
-  background-color: #d3dcdf;
+  background-color: #e3e5e5;
   padding: 0rem 1rem 1rem 1rem;
   color: rgb(63, 63, 63);
 }
@@ -158,8 +149,6 @@ footer {
   background-color: #4b96cf;
   color: white;
   padding-left: 10px;
-  display:flex;
-justify-content: space-between;
 }
 
 #section1 {
@@ -176,12 +165,12 @@ justify-content: space-between;
 
 #busstable {
   grid-area: busstable;
-  background-color: #f5f5f5;
-  padding: 0rem 0.5rem 0.5rem 0.5rem;
+  background-color: #dadada;
+  padding: 0rem 1rem 1rem 1rem;
 }
 
 .busstable {
-  /* margin-top: 0.5rem; */
+  margin-top: 0.5rem;
   font-size: 0.5rem;
   width: 100%;
   border-collapse: collapse;
@@ -197,21 +186,17 @@ justify-content: space-between;
 }
 
 .busstable th {
-  color: #4d4d4d;
+  color: gray;
   padding-bottom: 0.2rem;
-  padding-top: 0.5rem;
-  
 }
 
 .busstable tr {
-  background: #f5f5f5;
-  border-bottom: #dbdbdb solid 1px;
-  padding: 0.2rem 0.2rem;
+  background: #dadada;
+  /* border-bottom: #fafafa solid 1px; */
 }
-
-/* .busstable tr:nth-child(even) {
+.busstable tr:nth-child(even) {
   background: #c5c5c5;
-} */
+}
 
 .busstable td {
   padding: 0.13rem;
@@ -232,12 +217,9 @@ justify-content: space-between;
 
 .wheather {
   /* padding-top: 1rem; */
-  
   align-self: center;
   padding-right: 1rem;
-  text-align: right;
 }
-
 
 #section2 {
   grid-area: section2;
@@ -295,8 +277,4 @@ hr {
   display: flex;
   justify-content: space-between;
   padding-bottom: 0.4rem;
-}
-
-.footercontainer {
-  
 }

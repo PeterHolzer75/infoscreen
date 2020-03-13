@@ -62,11 +62,31 @@
                 month: '2-digit',
                 day: '2-digit'
             })
+
+            if (min < 10 ) {
+                min = '0'+ min;
+            }
+            if (hrs < 10 ) {
+                hrs = '0'+ hrs;
+            }
+
             document.getElementById('showtime').innerHTML = hrs + ':' + min;
             document.getElementById('showdate').innerHTML = day + ' ' + datum
         }
 
     </script>
+
+    <!-- PAGE refresh -->
+<!-- 
+    <script type="text/javascript">
+        // setInterval(pageReload, 10000);
+        function pageReload() {
+        location.reload(0)
+        }
+    </script> -->
+
+<!-- end page Refresh -->
+
 
     {% comment %}
 
@@ -97,6 +117,9 @@
     </div><!-- END Code to show window size -->
     {% endcomment %}
 
+    
+
 </body>
+
 
 </html>

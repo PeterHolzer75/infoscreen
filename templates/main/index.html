@@ -21,16 +21,16 @@
             <div class='welcome'>VÄLKOMMEN!</div>
         </div>
         <div class="logotyp">
-            <img src="{% static 'img/HHem_logo_gron_transp_vit.png' %}" width="110px" height="auto" alt=" logotyp">
+            <img src="{% static 'img/HHem_logo_gron_transp_vit.png' %}" width="150px" height="auto" alt=" logotyp">
         </div>
     </header>
 
     <section id="section1">
 
-        <img src="{% static 'img/burkar.jpg' %}" alt="">
+        <img src="{% static 'img/sallbo1.jpg' %}" alt="">
 
         <div class="cardtitle">Meddelande</div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est officia ut commodi nemo aspernatur, ducimus sunt
+        <p>Lorem ipsum dolor so aspernatur, ducimus <br>
             voluptates illo. Voluptatibus ea hic ipsam tempora dicta iste nostrum repudiandae dolores quibusdam nemo
             culpa nisi molestiae sunt perspiciatis accusamus, sint numquam. Perspiciatis officiis fugit ea officia aut
             molestiae maxime dolorem tenetur, eius deleniti.</p>
@@ -41,12 +41,16 @@
 
     <section id="busstable">
         <!-- <img src="{% static 'img/burkar.jpg'%}" alt="Bild på färgburkar"> -->
-        <div class="cardtitle">Bussförbindelse</div>
+        <div class="cardheader">
+        <div class="cardtitle">Bussar</div>
+        <img src="{% static 'img/skanetrafiken.jpg'%}" alt="Logotyp Skånetrafiken">
+
+        </div>
 
         <table class="busstable">
             <thead>
                 <tr>
-                    <th>Typ</th>
+                    <!-- <th>Typ</th> -->
                     <th class="linje">Linje</th>
                     <th>Från</th>
                     <th>Till</th>
@@ -56,7 +60,7 @@
             <tbody>
                 {% for b in busstable %}
                 <tr>
-                    <td>{{b.LineTypeName}}</td>
+                    <!-- <td>{{b.LineTypeName}}</td> -->
                     <td class="linje">{{b.Name}}</td>
                     <td>{{b.From}}</td>
                     <td>{{b.Towards}}</td>
@@ -87,8 +91,6 @@
         <p>{{resurs.ResursNamn}} <br>
             {{resurs.Telefonnummer}} <br>
             {{resurs.Epostadress}}
-
-
         </p>
         {% endif %}
 
@@ -111,12 +113,14 @@
 
     <footer>
         <div class="footercontainer">
-            <div id="showtime">time</div>
-            <div id="showdate">date</div>
+            <div id="showtime">[tid]</div>
+            <div id="showdate">[datum]</div>
         </div>
         <div class="wheather">
-            5 grader, kall och jävligt.
+            Skitväder, rentutsagt!
         </div>
+         
+
     </footer>
 
 

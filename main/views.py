@@ -75,7 +75,6 @@ def boendelista(request, adress):
 
     rp = sk.resultspage(f'Närmast|{nearest}|0',
                         "Helsingborg C|83241|0", "next")
-    print(len(rp))
 
     # rp = sk.resultspage("Malmö C|80000|0", "landskrona|82000|0", "next")
     # transportMode=("Stadsbuss",)
@@ -91,7 +90,7 @@ def boendelista(request, adress):
     # print(new_str)
     # print('------------------------------------------------------------------------------------------------------')
 
-    print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+    # print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
 
     busstable = list()
 
@@ -111,9 +110,9 @@ def boendelista(request, adress):
                               'LineTypeName': r['Line']['LineTypeName']
                               })
 
-    print(busstable)
+    # print(busstable)
 
-    print('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
+    # print('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
 
     #     # print(rout['LineTypeName'])
 
