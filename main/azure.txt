@@ -1,0 +1,7 @@
+Display name: 
+PetersAzureAuthTest
+Application (client) ID: 4b5cc313-fe1b-4b15-bd94-77063f967802
+Directory (tenant) ID:
+b82cfde3-1802-4b9a-a1ca-af679ca1b20d
+Object ID:
+74dd37cc-42c6-494e-8c69-ff54644967c8

@@ -17,7 +17,7 @@
 
         <!-- <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> -->
 
-        <link rel="stylesheet" href="{% static 'css/base2.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
         <!-- <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" /> -->
         <title>{% block title %}Helsingborgshem{% endblock title %}</title>
 
@@ -40,10 +40,8 @@
     <script type="text/javascript">
 
         setInterval(displayDatetime, 1000);
-
-
         function displayDatetime()
-{
+        {
             var weekday = new Array(7);
             weekday[0] = "Sön";
             weekday[1] = "Mon";
@@ -63,11 +61,11 @@
                 day: '2-digit'
             })
 
-            if (min < 10 ) {
-                min = '0'+ min;
+            if (min < 10) {
+                min = '0' + min;
             }
-            if (hrs < 10 ) {
-                hrs = '0'+ hrs;
+            if (hrs < 10) {
+                hrs = '0' + hrs;
             }
 
             document.getElementById('showtime').innerHTML = hrs + ':' + min;
@@ -77,7 +75,7 @@
     </script>
 
     <!-- PAGE refresh -->
-<!-- 
+    <!-- 
     <script type="text/javascript">
         // setInterval(pageReload, 10000);
         function pageReload() {
@@ -85,7 +83,7 @@
         }
     </script> -->
 
-<!-- end page Refresh -->
+    <!-- end page Refresh -->
 
 
     {% comment %}
@@ -116,8 +114,6 @@
         </p>
     </div><!-- END Code to show window size -->
     {% endcomment %}
-
-    
 
 </body>
 

@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from datetime import datetime
 import socket
 import requests
 import json
 import pickle
 import os
+import math
 import skanetrafiken as sk
+
 
 # IP address
 
@@ -22,7 +25,7 @@ def get_host_name_IP():
 def boendelista(request, adress):
     # adress = 'Grönkullagatan 9B'
 
-    HAS_ACCESS = True
+    HAS_ACCESS = False
 
     url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/palyipptest/trapphusboendelista_V2?gatuadress=' + adress
     url_r = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/palyipptest/trapphusresurslista?gatuadress=' + adress
@@ -93,18 +96,23 @@ def boendelista(request, adress):
     # print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
 
     busstable = list()
+    now = datetime.now()
 
     for sec in jour:
         # print(sec['SequenceNo'])
         rout = sec['RouteLinks']
         for r in rout:
             t = r['DepDateTime']
-            t = t[11:16]
-            print(t)
-            # print(r["Line"]['Name'], r['DepDateTime'],
-            #       r['Line']['Towards'], r['Line']['LineTypeName'])
+            tp = datetime.strptime(t, '%Y-%m-%dT%H:%M:%S')
+            diff = tp - now
+            om_minuter = math.floor(diff.total_seconds() / 60)
+            if om_minuter < 10:
+                dep_time = f'{om_minuter} min'
+            else:
+                dep_time = t[11:16]
+
             busstable.append({'Name': r["Line"]['Name'],
-                              'DepDateTime': t,
+                              'DepDateTime': dep_time,
                               'From': r['From']['Name'],
                               'Towards': r['Line']['Towards'],
                               'LineTypeName': r['Line']['LineTypeName']

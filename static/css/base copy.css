@@ -1,32 +1,31 @@
-@charset "UTF-8";
 @font-face {
   font-family: "century";
   src: url("../fonts/GOTHIC.TTF") format("truetype");
 }
-
 @font-face {
   font-family: "centuryb";
   src: url("../fonts/GOTHICB.TTF") format("truetype");
 }
 
 * {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
+
 
 body,
 html {
-  background: #fff;
+  background: black;
   /* height: 100vh; */
   width: 40vw;
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 32px;
-  /*base font-size för rem*/
+  box-sizing: border-box;
+  font-size: 32px; /*base font-size för rem*/
 }
 
 /* Grid modellen */
+
 .container {
   height: 1920px;
   width: 1080px;
@@ -37,28 +36,27 @@ html {
   /* border: 30px solid white; */
   /* align-items: center; */
   /* justify-items: center; */
-  display: -ms-grid;
+
   display: grid;
-  -ms-grid-columns: 50% auto;
-      grid-template-columns: 50% auto;
-  -ms-grid-rows: 10% auto 20% 15% 15% 10%;
-      grid-template-rows: 10% auto 20% 15% 15% 10%;
-      grid-template-areas: "header header" "aside1 section1" "aside1 main" "aside1 section2" "aside1 busstable" "footer footer";
+  grid-template-columns: 50% auto;
+  grid-template-rows: 10% auto 20% 15% 15% 10%;
+  grid-template-areas:
+    "header header"
+    "aside1 section1"
+    "aside1 main"
+    "aside1 section2"
+    "aside1 busstable"
+    "footer footer";
 }
 
 .cardheader {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display:flex;
+  justify-content: space-between;
 }
-
 .cardheader img {
-  margin-top: 0.5rem;
-  height: 100%;
-  /* border:1px black solid; */
+margin-top:0.5rem;
+height:100%;
+/* border:1px black solid; */
 }
 
 .cardtitle {
@@ -80,7 +78,7 @@ html {
 
 .gatunamn-header {
   font-family: "century", sans-serif;
-  font-size: 2rem;
+  font-size: 2.0rem;
   text-transform: uppercase;
 }
 
@@ -95,42 +93,31 @@ html {
   background-color: #ffffff;
   margin-top: 1rem;
 } */
+
 .adress {
   padding-top: 15px;
   padding-left: 15px;
 }
 
 aside {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 4;
-  -ms-grid-column: 1;
   grid-area: aside1;
 }
 
 header {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: header;
   background-color: #7baa20;
   color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
+
 
 #showtime {
   font-size: 2.5rem;
   padding: 0.3rem;
 }
-
 #showdate {
   font-size: 1rem;
   padding-left: 0.7rem;
@@ -151,12 +138,10 @@ header {
 }
 
 main {
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
   grid-area: main;
   background-color: #d3dcdf;
   padding: 0rem 1rem 1rem 1rem;
-  color: #3f3f3f;
+  color: rgb(63, 63, 63);
 }
 
 main p {
@@ -169,28 +154,19 @@ h4 {
 }
 
 footer {
-  -ms-grid-row: 6;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: footer;
   background-color: #4b96cf;
   color: white;
   padding-left: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display:flex;
+justify-content: space-between;
 }
 
 #section1 {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
   grid-area: section1;
   background-color: #eaeaea;
   padding: 0rem 1rem 1rem 1rem;
-  color: #555555;
+  color: rgb(85, 85, 85);
 }
 
 #section1 img {
@@ -199,8 +175,6 @@ footer {
 }
 
 #busstable {
-  -ms-grid-row: 5;
-  -ms-grid-column: 2;
   grid-area: busstable;
   background-color: #f5f5f5;
   padding: 0rem 0.5rem 0.5rem 0.5rem;
@@ -218,23 +192,7 @@ footer {
   text-align: left;
 }
 
-.linje_g {
-  text-align: center;
-  background-size: 100% 75%;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-image: url("../img/green.jpg");
-}
-
-.linje_y {
-  text-align: center;
-  background-size: 100% 90%;
-  background-repeat: no-repeat;
-  background-image: url("../img/yellow.jpg");
-}
-
-/* Polygon 1 */
-.test-center {
+.linje {
   text-align: center;
 }
 
@@ -242,6 +200,7 @@ footer {
   color: #4d4d4d;
   padding-bottom: 0.2rem;
   padding-top: 0.5rem;
+  
 }
 
 .busstable tr {
@@ -253,14 +212,13 @@ footer {
 /* .busstable tr:nth-child(even) {
   background: #c5c5c5;
 } */
+
 .busstable td {
   padding: 0.13rem;
+  color: #555555;
   font-size: 0.6rem;
   vertical-align: top;
-}
 
-.busstable td span {
-  color: #fff;
 }
 
 #section1 img {
@@ -274,16 +232,14 @@ footer {
 
 .wheather {
   /* padding-top: 1rem; */
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  
+  align-self: center;
   padding-right: 1rem;
   text-align: right;
 }
 
+
 #section2 {
-  -ms-grid-row: 4;
-  -ms-grid-column: 2;
   grid-area: section2;
   background-color: #c3ccbf;
   color: #1d4d08;
@@ -295,12 +251,13 @@ footer {
 }
 
 /* Grid modellen slut *******************************************************/
+
 .lista {
   width: 98%;
   height: 98%vh;
   /* border: 1px solid gray; */
   padding: 10px;
-  color: #727272;
+  color: rgb(114, 114, 114);
 }
 
 .vaning {
@@ -309,7 +266,7 @@ footer {
   padding-top: 1rem;
   margin-bottom: 0.8rem;
   text-transform: uppercase;
-  border-bottom: 2px solid #f3f3f3;
+  border-bottom: 2px solid rgb(243, 243, 243);
 }
 
 .sidinfo p {
@@ -335,14 +292,11 @@ hr {
 
 .rad {
   font-size: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding-bottom: 0.4rem;
 }
 
-/* Vector */
-/*# sourceMappingURL=base.css.map */
+.footercontainer {
+  
+}

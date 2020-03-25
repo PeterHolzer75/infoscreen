@@ -4,9 +4,9 @@
 
 <!-- 
 <div class="sidinfo">
-    <p>Hostname: {{hn}}</p>
-    <span>IP-address: {{ip}}</span>
-    <span> Antal adresser: {{antal}}</span>
+    <!-- <p>Hostname: {{hn}}</p> -->
+<span style="font-size:6px;">IP-address: {{ip}}</span>
+<!-- <span> Antal adresser: {{antal}}</span> -->
 </div> -->
 
 
@@ -16,6 +16,7 @@
 
     <header>
         <div class="adress">
+            <div style="font-size:8px;">IP-address: {{ip}}</div>
             <span class="gatunamn-header">{{gatuadress}}</span>
             <div class="balk"></div>
             <div class='welcome'>VÄLKOMMEN!</div>
@@ -34,9 +35,6 @@
             voluptates illo. Voluptatibus ea hic ipsam tempora dicta iste nostrum repudiandae dolores quibusdam nemo
             culpa nisi molestiae sunt perspiciatis accusamus, sint numquam. Perspiciatis officiis fugit ea officia aut
             molestiae maxime dolorem tenetur, eius deleniti.</p>
-
-
-
     </section>
 
     <section id="busstable">
@@ -47,24 +45,37 @@
 
         </div>
 
+        <!-- BUSSTABELL -->
+
         <table class="busstable">
             <thead>
                 <tr>
                     <!-- <th>Typ</th> -->
-                    <th class="linje">Linje</th>
+                    <th class="text-center">Linje</th>
                     <th>Från</th>
                     <th>Till</th>
-                    <th class="linje">Tid</th>
+                    <th class="text-center">Tid</th>
                 </tr>
             </thead>
             <tbody>
+                {{STATIC_URL}}
                 {% for b in busstable %}
                 <tr>
+
                     <!-- <td>{{b.LineTypeName}}</td> -->
-                    <td class="linje">{{b.Name}}</td>
+
+                    {{STATIC_URL}}
+
+                    {% if b.LineTypeName == 'Stadsbuss'%}
+                    <td class="linje_g"><span>{{b.Name}}</span></td>
+                    {% else %}
+                    <td class="linje_y"><span>{{b.Name}}</span></td>
+                    {% endif%}
+
+
                     <td>{{b.From}}</td>
                     <td>{{b.Towards}}</td>
-                    <td class="linje">{{b.DepDateTime}}</td>
+                    <td class="text-center">{{b.DepDateTime}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
