@@ -22,20 +22,34 @@ def get_host_name_IP():
     return host_name, host_ip
 
 
-def boendelista(request, adress):
+def infoscreen(request, adress):
     # adress = 'Grönkullagatan 9B'
+    template_name = 'main/index.html'
 
     HAS_ACCESS = True
 
-    url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/palyipptest/trapphusboendelista_V2?gatuadress=' + adress
-    url_r = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/palyipptest/trapphusresurslista?gatuadress=' + adress
+
+    url_adressdata = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/objektadressinfo?gatuadress=' + adress
+    url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_V2?gatuadress=' + adress
+    url_r = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusresurslista?gatuadress=' + adress
 
     if HAS_ACCESS:
 
+        adressdata = requests.get(url_adressdata)
+
+        if adressdata.status_code !=200:            
+            return HttpResponse(f'<h3>Error {adressdata.status_code}: Problem med API för adressdata</h3>')
+
+
         b = requests.get(url_b)
+        if b.status_code !=200:            
+            return HttpResponse(f'<h3>Error {b.status_code}: Problem med API för boendelista</h3>')
         data_b = b.json()
 
+
         r = requests.get(url_r)
+        if r.status_code !=200:            
+            return HttpResponse(f'<h3>Error {r.status_code}: Problem med API för resurslista</h3>')
         data_r = r.json()
 
     else:
@@ -124,7 +138,6 @@ def boendelista(request, adress):
 
     #     # print(rout['LineTypeName'])
 
-    template_name = 'main/index.html'
     hn, ip = get_host_name_IP()
 
     context = {

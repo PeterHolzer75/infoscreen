@@ -1,0 +1,15 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block content%}
+<!-- <div class="sidinfo">
+    <p>Hostname: {{hn}}</p> -->
+<!-- <span style="font-size:6px;">IP-address: {{ip}}</span> -->
+<!-- <span> Antal adresser: {{antal}}</span> -->
+<!-- </div> -->
+
+<div class="container">
+    <aside>{{boendelista|safe}}</aside>
+</div>
+
+{% endblock content%}

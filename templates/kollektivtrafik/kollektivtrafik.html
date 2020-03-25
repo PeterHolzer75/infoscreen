@@ -1,0 +1,50 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block content%}
+
+
+<div class="container">
+
+    <!-- <div class="cardheader">
+        <div class="cardtitle">Bussar</div>
+        <img src="{% static 'img/skanetrafiken.jpg'%}" alt="Logotyp Skånetrafiken">
+    </div> -->
+
+    <!-- BUSSTABELL -->
+
+    <table class="busstable">
+        <thead>
+            <tr>
+                <!-- <th>Typ</th> -->
+                <th class="text-center">Linje</th>
+                <th>Från</th>
+                <th>Till</th>
+                <th class="text-center">Tid</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{STATIC_URL}}
+            {% for b in busstable %}
+            <tr>
+
+                <!-- <td>{{b.LineTypeName}}</td> -->
+
+                {{STATIC_URL}}
+
+                {% if b.LineTypeName == 'Stadsbuss'%}
+                <td class="linje_g"><span>{{b.Name}}</span></td>
+                {% else %}
+                <td class="linje_y"><span>{{b.Name}}</span></td>
+                {% endif%}
+
+
+                <td>{{b.From}}</td>
+                <td>{{b.Towards}}</td>
+                <td class="text-center">{{b.DepDateTime}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content%}
