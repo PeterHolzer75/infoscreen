@@ -1,0 +1,126 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block content%}
+
+<!-- 
+<div class="sidinfo">
+    <p>Hostname: {{hn}}</p>
+    <span>IP-address: {{ip}}</span>
+    <span> Antal adresser: {{antal}}</span>
+</div> -->
+
+
+<div class="container">
+
+    <aside>{{boendelista|safe}}</aside>
+
+    <header>
+        <div class="adress">
+            <span class="gatunamn-header">{{gatuadress}}</span>
+            <div class="balk"></div>
+            <div class='welcome'>VÄLKOMMEN!</div>
+        </div>
+        <div class="logotyp">
+            <img src="{% static 'img/HHem_logo_gron_transp_vit.png' %}" width="150px" height="auto" alt=" logotyp">
+        </div>
+    </header>
+
+    <section id="section1">
+
+        <img src="{% static 'img/sallbo1.jpg' %}" alt="">
+
+        <div class="cardtitle">Meddelande</div>
+        <p>Lorem ipsum dolor so aspernatur, ducimus <br>
+            voluptates illo. Voluptatibus ea hic ipsam tempora dicta iste nostrum repudiandae dolores quibusdam nemo
+            culpa nisi molestiae sunt perspiciatis accusamus, sint numquam. Perspiciatis officiis fugit ea officia aut
+            molestiae maxime dolorem tenetur, eius deleniti.</p>
+    </section>
+
+    <section id="busstable">
+        <!-- <img src="{% static 'img/burkar.jpg'%}" alt="Bild på färgburkar"> -->
+        <div class="cardheader">
+            <div class="cardtitle">Bussar</div>
+            <img src="{% static 'img/skanetrafiken.jpg'%}" alt="Logotyp Skånetrafiken">
+
+        </div>
+
+        <table class="busstable">
+            <thead>
+                <tr>
+                    <!-- <th>Typ</th> -->
+                    <th class="linje">Linje</th>
+                    <th>Från</th>
+                    <th>Till</th>
+                    <th class="linje">Tid</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for b in busstable %}
+                <tr>
+                    <!-- <td>{{b.LineTypeName}}</td> -->
+                    <td class="linje">{{b.Name}}</td>
+                    <td>{{b.From}}</td>
+                    <td>{{b.Towards}}</td>
+                    <td class="linje">{{b.DepDateTime}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </section>
+
+    <main>
+        <div class="cardtitle">KONTAKTA OSS</div>
+        {% for resurs in resurser %}
+
+        {% if resurs.ResurstypSystemname == 'KV' %}
+        <div class="cardtitle-2">Kundvärd</div>
+
+        <p>{{resurs.ResursNamn}} <br>
+            {{resurs.Telefonnummer}} <br>
+            {{resurs.Epostadress}}
+        </p>
+        {% endif %}
+
+        {% if resurs.ResurstypSystemname == 'FV' %}
+        <div class="cardtitle-2">Fastighetsvärd</div>
+
+        <p>{{resurs.ResursNamn}} <br>
+            {{resurs.Telefonnummer}} <br>
+            {{resurs.Epostadress}}
+        </p>
+        {% endif %}
+
+        {% endfor %}
+
+
+    </main>
+
+    <section id="section2">
+
+        <div class="cardtitle">
+            SÅ HÄR FELANMÄLER DU
+        </div>
+
+        <p>Felanmälan gör du lättast på Mina Sidor. Där är det öppet alla dagens timmar.
+            Du kan även ringa in din felamälan till vår Kundservice 042-20 80 00.
+            Är felet akut och uppstår under kvällar och helger ringer du fastighetsjouren på 042-20 82 00.
+        </p>
+    </section>
+
+    <footer>
+        <div class="footercontainer">
+            <div id="showtime">[tid]</div>
+            <div id="showdate">[datum]</div>
+        </div>
+        <div class="wheather">
+            Skitväder, rentutsagt!
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+{% endblock content%}

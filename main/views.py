@@ -25,7 +25,7 @@ def get_host_name_IP():
 def boendelista(request, adress):
     # adress = 'Grönkullagatan 9B'
 
-    HAS_ACCESS = False
+    HAS_ACCESS = True
 
     url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/palyipptest/trapphusboendelista_V2?gatuadress=' + adress
     url_r = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/palyipptest/trapphusresurslista?gatuadress=' + adress
