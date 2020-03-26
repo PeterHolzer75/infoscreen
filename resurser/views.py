@@ -12,7 +12,7 @@ import math
 
 def resurser(request, adress):
     # adress = 'Grönkullagatan 9B'
-    template_name = 'main/index.html'
+    template_name = 'resurser/resurser.html'
 
     HAS_ACCESS = True
 

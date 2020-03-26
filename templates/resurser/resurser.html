@@ -3,28 +3,28 @@
 {% block content%}
 
 <div class="container">
-        <div class="cardtitle">KONTAKTA OSS</div>
-        {% for resurs in resurser %}
+    <div class="cardtitle">KONTAKTA OSS</div>
+    {% for resurs in resurser %}
 
-        {% if resurs.ResurstypSystemname == 'KV' %}
-        <div class="cardtitle-2">Kundvärd</div>
+    {% if resurs.ResurstypSystemname == 'KV' %}
+    <div class="cardtitle-2">Kundvärd</div>
 
-        <p>{{resurs.ResursNamn}} <br>
-            {{resurs.Telefonnummer}} <br>
-            {{resurs.Epostadress}}
-        </p>
-        {% endif %}
+    <p>{{resurs.ResursNamn}} <br>
+        {{resurs.Telefonnummer}} <br>
+        {{resurs.Epostadress}}
+    </p>
+    {% endif %}
 
-        {% if resurs.ResurstypSystemname == 'FV' %}
-        <div class="cardtitle-2">Fastighetsvärd</div>
+    {% if resurs.ResurstypSystemname == 'FV' %}
+    <div class="cardtitle-2">Fastighetsvärd</div>
 
-        <p>{{resurs.ResursNamn}} <br>
-            {{resurs.Telefonnummer}} <br>
-            {{resurs.Epostadress}}
-        </p>
-        {% endif %}
+    <p>{{resurs.ResursNamn}} <br>
+        {{resurs.Telefonnummer}} <br>
+        {{resurs.Epostadress}}
+    </p>
+    {% endif %}
 
-        {% endfor %}
+    {% endfor %}
 </div>
 
 {% endblock content%}
