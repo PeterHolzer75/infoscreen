@@ -22,7 +22,7 @@ def resurser(request, adress):
 
         r = requests.get(url_r)
         if r.status_code !=200:            
-            return HttpResponse(f'<h3>Error {r.status_code}: Problem med API för resurslista</h3>')
+            return HttpResponse(f'<h3>Error {r.status_code}: Problem med API''et för resurslista</h3>')
         data_r = r.json()
 
     else:
