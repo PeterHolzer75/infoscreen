@@ -21,6 +21,9 @@ def get_host_name_IP():
         print("Unable to get Hostname and IP")
     return host_name, host_ip
 
+def ip(request):
+    return HttpResponse(f'<h1>Hostname: {get_host_name_IP()[0]}<br>IP-address: {get_host_name_IP()[1]}</h1>') 
+
 
 def infoscreen(request, adress):
     # adress = 'Grönkullagatan 9B'
