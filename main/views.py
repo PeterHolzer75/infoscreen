@@ -22,7 +22,7 @@ def get_host_name_IP():
     return host_name, host_ip
 
 def ip(request):
-    return HttpResponse(f'<h1>Hostname: {get_host_name_IP()[0]}<br>IP-address: {get_host_name_IP()[1]}</h1>') 
+    return HttpResponse(f'<h1>IP-address: {get_host_name_IP()[1]} - Hostname: {get_host_name_IP()[0]}</h1>') 
 
 
 def infoscreen(request, adress):
