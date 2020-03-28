@@ -1,1 +1,3 @@
-phr:testtest
+AuthType Basic
+AuthUserFile /.htpassword
+require valid-user
