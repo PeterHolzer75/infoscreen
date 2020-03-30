@@ -41,8 +41,8 @@ def infoscreen(request, adress):
         "http": os.environ.get('FIXIE_URL', ''),
         "https": os.environ.get('FIXIE_URL', '')
     }
-    # r = requests.get('http://www.example.com', proxies=proxyDict)
 
+    # r = requests.get('http://www.example.com', proxies=proxyDict)
 
     url_adressdata = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/objektadressinfo?gatuadress=' + adress
     url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_V2?gatuadress=' + adress
