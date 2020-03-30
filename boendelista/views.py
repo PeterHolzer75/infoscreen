@@ -9,6 +9,12 @@ import os
 
 
 def boendelista(request, adress):
+
+    proxyDict = {
+        "http": os.environ.get('FIXIE_URL', ''),
+        "https": os.environ.get('FIXIE_URL', '')
+    }
+
     # adress = 'Grönkullagatan 9B'
     template_name = 'boendelista/boendelista.html'
     HAS_ACCESS = True
@@ -17,11 +23,10 @@ def boendelista(request, adress):
 
     if HAS_ACCESS:
 
-        b = requests.get(url_b)
-        if b.status_code !=200:            
+        b = requests.get(url_b, proxies=proxyDict)
+        if b.status_code != 200:
             return HttpResponse(f'<h3>Error {b.status_code}: Problem med API för boendelista</h3>')
         data_b = b.json()
-
 
     else:
 

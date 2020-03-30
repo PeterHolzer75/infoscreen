@@ -10,9 +10,15 @@ import math
 
 # IP address
 
+
 def resurser(request, adress):
     # adress = 'Grönkullagatan 9B'
     template_name = 'resurser/resurser.html'
+
+    proxyDict = {
+        "http": os.environ.get('FIXIE_URL', ''),
+        "https": os.environ.get('FIXIE_URL', '')
+    }
 
     HAS_ACCESS = True
 
@@ -20,8 +26,8 @@ def resurser(request, adress):
 
     if HAS_ACCESS:
 
-        r = requests.get(url_r)
-        if r.status_code !=200:            
+        r = requests.get(url_r, proxies=proxyDict)
+        if r.status_code != 200:
             return HttpResponse(f'<h3>Error {r.status_code}: Problem med API''et för resurslista</h3>')
         data_r = r.json()
 
@@ -34,6 +40,5 @@ def resurser(request, adress):
     context = {
         'resurser': data_r,
     }
-
 
     return render(request, template_name, context)

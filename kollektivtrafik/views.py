@@ -15,18 +15,20 @@ import skanetrafiken as sk
 
 def kollektivtrafik(request, adress):
     # adress = 'Grönkullagatan 9B'
-
-    print
+    proxyDict = {
+        "http": os.environ.get('FIXIE_URL', ''),
+        "https": os.environ.get('FIXIE_URL', '')
+    }
 
     template_name = 'kollektivtrafik/kollektivtrafik.html'
-    
+
     url_adressdata = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/objektadressinfo?gatuadress=' + adress
 
     # ----------------------------------------------------------------------
     # Skånetrafiken API
     # ----------------------------------------------------------------------
-    
-    adressdata = requests.get(url_adressdata)
+
+    adressdata = requests.get(url_adressdata, proxies=proxyDict)
 
     print(adressdata.headers)
 
@@ -37,14 +39,13 @@ def kollektivtrafik(request, adress):
     print(a)
     lat = a[0]['Lat']
     lng = a[0]['Lng']
-       
-    print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-    
 
-    if adressdata.status_code !=200:            
+    print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+
+    if adressdata.status_code != 200:
         return HttpResponse(f'<h3>Error {adressdata.status_code}: Problem med API för adressdata</h3>')
 
-    skr = sk.neareststation(lat,lng, 0)
+    skr = sk.neareststation(lat, lng, 0)
 
     # Code
     # Message
@@ -97,8 +98,6 @@ def kollektivtrafik(request, adress):
                               'Towards': r['Line']['Towards'],
                               'LineTypeName': r['Line']['LineTypeName']
                               })
-
-
 
     context = {
         'busstable': busstable,
