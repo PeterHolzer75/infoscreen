@@ -12,7 +12,6 @@ import skanetrafiken as sk
 
 # IP address
 
-
 def get_host_name_IP():
     try:
         host_name = socket.gethostname()
@@ -21,8 +20,9 @@ def get_host_name_IP():
         print("Unable to get Hostname and IP")
     return host_name, host_ip
 
+
 def ip(request):
-    return HttpResponse(f'<h1>IP-address: {get_host_name_IP()[1]} - Hostname: {get_host_name_IP()[0]}</h1>') 
+    return HttpResponse(f'<h1>IP-address: {get_host_name_IP()[1]} - Hostname: {get_host_name_IP()[0]}</h1>')
 
 
 def infoscreen(request, adress):
@@ -30,7 +30,6 @@ def infoscreen(request, adress):
     template_name = 'main/index.html'
 
     HAS_ACCESS = True
-
 
     url_adressdata = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/objektadressinfo?gatuadress=' + adress
     url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_V2?gatuadress=' + adress
@@ -40,18 +39,16 @@ def infoscreen(request, adress):
 
         adressdata = requests.get(url_adressdata)
 
-        if adressdata.status_code !=200:            
+        if adressdata.status_code != 200:
             return HttpResponse(f'<h3>Error {adressdata.status_code}: Problem med API för adressdata</h3>')
 
-
         b = requests.get(url_b)
-        if b.status_code !=200:            
+        if b.status_code != 200:
             return HttpResponse(f'<h3>Error {b.status_code}: Problem med API för boendelista</h3>')
         data_b = b.json()
 
-
         r = requests.get(url_r)
-        if r.status_code !=200:            
+        if r.status_code != 200:
             return HttpResponse(f'<h3>Error {r.status_code}: Problem med API för resurslista</h3>')
         data_r = r.json()
 
