@@ -10,6 +10,13 @@ import math
 import skanetrafiken as sk
 
 
+proxyDict = {
+    "http": os.environ.get('FIXIE_URL', ''),
+    "https": os.environ.get('FIXIE_URL', '')
+}
+r = requests.get('http://www.example.com', proxies=proxyDict)
+
+
 # IP address
 
 def get_host_name_IP():
@@ -28,8 +35,14 @@ def ip(request):
 def infoscreen(request, adress):
     # adress = 'Grönkullagatan 9B'
     template_name = 'main/index.html'
-
     HAS_ACCESS = True
+
+    proxyDict = {
+        "http": os.environ.get('FIXIE_URL', ''),
+        "https": os.environ.get('FIXIE_URL', '')
+    }
+    # r = requests.get('http://www.example.com', proxies=proxyDict)
+
 
     url_adressdata = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/objektadressinfo?gatuadress=' + adress
     url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_V2?gatuadress=' + adress
@@ -37,17 +50,17 @@ def infoscreen(request, adress):
 
     if HAS_ACCESS:
 
-        adressdata = requests.get(url_adressdata)
+        adressdata = requests.get(url_adressdata, proxies=proxyDict)
 
         if adressdata.status_code != 200:
             return HttpResponse(f'<h3>Error {adressdata.status_code}: Problem med API för adressdata</h3>')
 
-        b = requests.get(url_b)
+        b = requests.get(url_b, proxies=proxyDict)
         if b.status_code != 200:
             return HttpResponse(f'<h3>Error {b.status_code}: Problem med API för boendelista</h3>')
         data_b = b.json()
 
-        r = requests.get(url_r)
+        r = requests.get(url_r, proxies=proxyDict)
         if r.status_code != 200:
             return HttpResponse(f'<h3>Error {r.status_code}: Problem med API för resurslista</h3>')
         data_r = r.json()
