@@ -18,7 +18,6 @@ def kollektivtrafik(request, adress):
 
     filename = 'adressgronkullagatan.data'
 
-    proxyDict = {}
 
     if settings.DEBUG == False:
         proxyDict = {
@@ -33,8 +32,8 @@ def kollektivtrafik(request, adress):
     # ----------------------------------------------------------------------
     # Skånetrafiken API
     # ----------------------------------------------------------------------
-    print('.....................................................................')
-    print
+    print('.........................................bbb............................')
+    
     if settings.DEBUG == False:
         # adressdata = requests.get(url_adressdata, proxies=proxyDict)
         adressdata = requests.get(url_adressdata)
@@ -45,7 +44,6 @@ def kollektivtrafik(request, adress):
 
         with open(filename, 'rb') as filehandle:
             adressdata = pickle.load(filehandle)
-    print(adressdata +'.....................................................................')
     
     a = adressdata.json()
     
@@ -54,7 +52,7 @@ def kollektivtrafik(request, adress):
     lat = a[0]['Lat']
     lng = a[0]['Lng']
 
-    print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+    print(lat)
 
     if adressdata.status_code != 200:
         return HttpResponse(f'<h3>Error {adressdata.status_code}: Problem med API för adressdata</h3>')

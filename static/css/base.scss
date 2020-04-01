@@ -69,7 +69,7 @@ html {
 
   img {
     margin-top: 0.5rem;
-    height: 100%;
+    height: 1
     /* border:1px black solid; */
   }
 }
@@ -77,7 +77,7 @@ html {
 .cardtitle {
   /* border:1px black solid; */
   font-family: "centuryb", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-transform: uppercase;
   padding-top: 0.3rem;
   color: #575757;
@@ -206,8 +206,8 @@ footer {
   background-position-y: center;
 
   // background-image: url("{{STATIC_URL}}img/green.jpg");
-  // background-image: url("../img/green.jpg");
-  background-image: url("{% static '../img/green.jpg' %}");
+  background-image: url("../img/green.jpg");
+  // background-image: url("{% static '../img/green.jpg' %}");
 }
 
 .linje_y {
@@ -407,7 +407,7 @@ hr {
 .container_kollektivtrafik {
   height: 380px;
   width: 500px;
-  background: rgb(225, 226, 225);
+  background: rgb(255, 255, 255);
   // border: 1px solid rgb(100, 100, 100);
   padding: 10px;
   border-radius: 5px;

@@ -54,13 +54,13 @@ html {
 .cardheader img {
   margin-top: 0.5rem;
   height: 100%;
-  /* border:1px black solid; */
+  border:1px black solid;
 }
 
 .cardtitle {
   /* border:1px black solid; */
   font-family: "centuryb", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-transform: uppercase;
   padding-top: 0.3rem;
   color: #575757;
