@@ -13,19 +13,18 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 
 USE_S3 = False
+RUN_LOCAL = os.environ.get('FIXIE_URL', '') == ''
+# SECURITY WARNING: keep the secret key used in production secret!
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = RUN_LOCAL
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '-1gu8fo(h=(q947@4nft7e(l5hem-(*ceu$#i5k5#z@=oqa=v#'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
 ALLOWED_HOSTS = ['hbgheminfoscreen.herokuapp.com', '127.0.0.1', ]
 

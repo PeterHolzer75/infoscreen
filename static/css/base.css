@@ -17,7 +17,6 @@ body,
 html {
   background: #fff;
   /* height: 100vh; */
-  width: 40vw;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -90,11 +89,6 @@ html {
   padding-top: 0.5rem;
 }
 
-/* .gatunamn aside {
-  grid-area: aside1;
-  background-color: #ffffff;
-  margin-top: 1rem;
-} */
 .adress {
   padding-top: 15px;
   padding-left: 15px;
@@ -295,12 +289,12 @@ footer {
 }
 
 /* Grid modellen slut *******************************************************/
-.lista {
+.boendelista {
   width: 98%;
   height: 98%vh;
   /* border: 1px solid gray; */
   padding: 10px;
-  color: #727272;
+  color: #616161;
 }
 
 .vaning {
@@ -345,4 +339,78 @@ hr {
 }
 
 /* Vector */
+.container_resurser {
+  height: 280px;
+  width: 500px;
+  background: #e1e2e1;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.container_resurser hr {
+  margin: 0;
+  border-top: 1px;
+}
+
+.container_resurser p {
+  color: #616161;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.container_resurser h2 {
+  color: #616161;
+  font-size: 30px;
+  margin: 3px 3px;
+}
+
+.container_resurser h3 {
+  color: #616161;
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+.container_resurser img {
+  border-radius: 50%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-shadow: 2px -1px 2px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px -1px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.container_resurser .roll {
+  margin-left: 10px;
+}
+
+.container_resurser .roll-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container_resurser .rollbild {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  padding-right: 20px;
+  vertical-align: middle;
+}
+
+.title_resurser {
+  color: #616161;
+  font-size: 1rem;
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+
+.utitle_resurser {
+  color: #616161;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
 /*# sourceMappingURL=base.css.map */

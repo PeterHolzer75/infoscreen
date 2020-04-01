@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
+from django.conf import settings
 import socket
 import requests
 import json
@@ -15,13 +16,15 @@ import skanetrafiken as sk
 
 def kollektivtrafik(request, adress):
     # adress = 'Grönkullagatan 9B'
-    proxyDict = {
-        "http": os.environ.get('FIXIE_URL', ''),
-        "https": os.environ.get('FIXIE_URL', '')
-    }
+
+    proxyDict = {}
+    if settings.DEBUG == False:
+        proxyDict = {
+            "http": os.environ.get('FIXIE_URL', ''),
+            "https": os.environ.get('FIXIE_URL', '')
+        }
 
     template_name = 'kollektivtrafik/kollektivtrafik.html'
-
     url_adressdata = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/objektadressinfo?gatuadress=' + adress
 
     # ----------------------------------------------------------------------

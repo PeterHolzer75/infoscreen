@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.conf import settings
 from django.http import HttpResponse
 from datetime import datetime
 import socket
@@ -17,11 +18,10 @@ def boendelista(request, adress):
 
     # adress = 'Grönkullagatan 9B'
     template_name = 'boendelista/boendelista.html'
-    HAS_ACCESS = True
 
     url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_V2?gatuadress=' + adress
 
-    if HAS_ACCESS:
+    if settings.DEBUG == False:
 
         b = requests.get(url_b, proxies=proxyDict)
         if b.status_code != 200:
@@ -36,7 +36,6 @@ def boendelista(request, adress):
             data_b = pickle.load(filehandle)
 
     antal = len(data_b)
-    print(f'len:{len(data_b)}')
 
     context = {
         'data': data_b,
@@ -70,7 +69,7 @@ def boendelista(request, adress):
     # -----------------------------------------------------------------------
     # print(data_r)
 
-    s = '<div class="lista">'
+    s = '<div class="boendelista">'
 
     v_old = ''
     for adr in data_b:
@@ -91,7 +90,7 @@ def boendelista(request, adress):
         s += '</div>'
     s += '</div>'
 
-    # print(s)
+    print(s)
 
     context['boendelista'] = s
 

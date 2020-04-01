@@ -2,26 +2,46 @@
 {% load static %}
 {% block content%}
 
-<div class="container">
+<div class="container_resurser">
 
-    <div class="cardtitle">KONTAKTA OSS</div>
+    <h2>KONTAKTA OSS</h2>
     {% for resurs in resurser %}
     {% if resurs.ResurstypSystemname == 'KV' %}
-    <div class="cardtitle-2">Kundvärd</div>
-    <p>{{resurs.ResursNamn}} <br>
-        {{resurs.Telefonnummer}} <br>
-        {{resurs.Epostadress}}
-    </p>
-    {% endif %}
-    {% if resurs.ResurstypSystemname == 'FV' %}
-    <div class="cardtitle-2">Fastighetsvärd</div>
-    <p>{{resurs.ResursNamn}} <br>
-        {{resurs.Telefonnummer}} <br>
-        {{resurs.Epostadress}}
-    </p>
-    {% endif %}
+    <div class="roll">
+        <div class="roll-container">
+            <div class="roll-text">
+                <h3>Din kundvärd</h3>
+                <hr>
+                <p>{{resurs.ResursNamn}} <br>
+                    {{resurs.Telefonnummer}} <br>
+                    {{resurs.Epostadress}}
+                </p>
+            </div>
+            <div class="rollbild">
+                <img src="/static/img/personalbilder/hanna_johansson_200.jpg" width="120px" height="110px"
+                    alt="Hanna Johansson">
+            </div>
+        </div>
 
-    {% endfor %}
+        {% endif %}
+        {% if resurs.ResurstypSystemname == 'FV' %}
+        <div class="roll-container">
+            <div class="roll-text">
+                <h3>Din fastighetsvärd</h3>
+                <hr>
+                <p>{{resurs.ResursNamn}} <br>
+                    {{resurs.Telefonnummer}} <br>
+                    {{resurs.Epostadress}}
+                </p>
+            </div>
+            <div class="rollbild">
+                <img src="/static/img/personalbilder/burim_abazaj_200.jpg" width="120px" height="110px"
+                    alt="Burim Abazaij">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
 </div>
 
 {% endblock content%}

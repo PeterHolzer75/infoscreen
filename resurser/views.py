@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.conf import settings
 from django.http import HttpResponse
 from datetime import datetime
 import socket
@@ -20,11 +21,9 @@ def resurser(request, adress):
         "https": os.environ.get('FIXIE_URL', '')
     }
 
-    HAS_ACCESS = True
-
     url_r = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusresurslista?gatuadress=' + adress
 
-    if HAS_ACCESS:
+    if settings.DEBUG == False:
 
         r = requests.get(url_r, proxies=proxyDict)
         if r.status_code != 200:

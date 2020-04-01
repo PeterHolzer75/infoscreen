@@ -31,7 +31,7 @@ body,
 html {
   background: color(bg);
   /* height: 100vh; */
-  width: 40vw;
+  // width: 40vw;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -102,12 +102,6 @@ html {
   font-size: 1rem;
   padding-top: 0.5rem;
 }
-
-/* .gatunamn aside {
-  grid-area: aside1;
-  background-color: #ffffff;
-  margin-top: 1rem;
-} */
 
 .adress {
   padding-top: 15px;
@@ -286,12 +280,12 @@ footer {
 
 /* Grid modellen slut *******************************************************/
 
-.lista {
+.boendelista {
   width: 98%;
   height: 98%vh;
   /* border: 1px solid gray; */
   padding: 10px;
-  color: rgb(114, 114, 114);
+  color: color(text)
 }
 
 .vaning {
@@ -335,3 +329,65 @@ hr {
 }
 
 /* Vector */
+
+.container_resurser {
+  height: 280px;
+  width: 500px;
+  background: rgb(225, 226, 225);
+  // border: 1px solid rgb(100, 100, 100);
+  padding: 10px;
+  border-radius: 5px;
+  hr {
+    margin: 0;
+    border-top: 1px;
+  }
+
+  p {
+    color: color(text);
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  h2 {
+    color: color(text);
+    font-size: 30px;
+    margin: 3px 3px;
+  }
+  h3 {
+    color: color(text);
+    font-size: 20px;
+    margin-bottom: 3px;
+  }
+  img {
+    border-radius: 50%;
+    align-self: center;
+    box-shadow: 2px -1px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  .roll {
+    margin-left: 10px;
+  }
+
+  .roll-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .rollbild {
+    display: flex;
+    justify-items: center;
+    // width: 20%;
+    padding-right: 20px;
+    vertical-align: middle;
+  }
+}
+
+.title_resurser {
+  color: color(text);
+  font-size: 1rem;
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+
+.utitle_resurser {
+  color: color(text);
+  font-size: 0.7rem;
+  font-weight: 600;
+}

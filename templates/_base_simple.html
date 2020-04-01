@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Förhindra sökmotor indixering -->
+    <meta name="robots" content="noindex">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!-- <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" /> -->
+    <title>{% block title %}Helsingborgshem{% endblock title %}</title>
+
+</head>
+
+<body>
+    {% block content %}{% endblock %}
+</body>
+
+
+</html>
