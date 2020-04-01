@@ -285,7 +285,7 @@ footer {
   height: 98%vh;
   /* border: 1px solid gray; */
   padding: 10px;
-  color: color(text)
+  color: color(text);
 }
 
 .vaning {
@@ -323,9 +323,6 @@ hr {
   display: flex;
   justify-content: space-between;
   padding-bottom: 0.4rem;
-}
-
-.footercontainer {
 }
 
 /* Vector */
@@ -390,4 +387,26 @@ hr {
   color: color(text);
   font-size: 0.7rem;
   font-weight: 600;
+}
+
+.title_resurser {
+  color: color(text);
+  font-size: 1rem;
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+
+.utitle_resurser {
+  color: color(text);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.container_kollektivtrafik {
+  height: 380px;
+  width: 500px;
+  background: rgb(225, 226, 225);
+  // border: 1px solid rgb(100, 100, 100);
+  padding: 10px;
+  border-radius: 5px;
 }

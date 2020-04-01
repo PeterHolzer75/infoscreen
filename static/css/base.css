@@ -413,4 +413,25 @@ hr {
   font-size: 0.7rem;
   font-weight: 600;
 }
+
+.title_resurser {
+  color: #616161;
+  font-size: 1rem;
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+
+.utitle_resurser {
+  color: #616161;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.container_kollektivtrafik {
+  height: 380px;
+  width: 500px;
+  background: #e1e2e1;
+  padding: 10px;
+  border-radius: 5px;
+}
 /*# sourceMappingURL=base.css.map */
