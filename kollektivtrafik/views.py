@@ -17,6 +17,8 @@ import skanetrafiken as sk
 def kollektivtrafik(request, adress):
     # adress = 'Grönkullagatan 9B'
 
+    filename = 'adressgronkullagatan.data'
+
     proxyDict = {}
     if settings.DEBUG == False:
         proxyDict = {
@@ -31,13 +33,15 @@ def kollektivtrafik(request, adress):
     # Skånetrafiken API
     # ----------------------------------------------------------------------
 
-    adressdata = requests.get(url_adressdata, proxies=proxyDict)
+    if settings.DEBUG == False:
+        adressdata = requests.get(url_adressdata, proxies=proxyDict)
+        with open(filename, 'wb') as filehandle:
+            #   store the data as binary data stream
+            pickle.dump(j, filehandle)
+    else:
+        with open(filename, 'rb') as filehandle:
+            adressdata = pickle.load(filehandle)
 
-    print(adressdata.headers)
-
-    print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-    print(adressdata.status_code)
-    print(adressdata)
     a = adressdata.json()
     print(a)
     lat = a[0]['Lat']
