@@ -15,16 +15,17 @@ import skanetrafiken as sk
 # IP address
 
 def kollektivtrafik(request, adress):
-    # adress = 'Grönkullagatan 9B'
 
     filename = 'adressgronkullagatan.data'
 
     proxyDict = {}
+
     if settings.DEBUG == False:
         proxyDict = {
             "http": os.environ.get('FIXIE_URL', ''),
             "https": os.environ.get('FIXIE_URL', '')
         }
+    
 
     template_name = 'kollektivtrafik/kollektivtrafik.html'
     url_adressdata = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/objektadressinfo?gatuadress=' + adress
@@ -32,18 +33,24 @@ def kollektivtrafik(request, adress):
     # ----------------------------------------------------------------------
     # Skånetrafiken API
     # ----------------------------------------------------------------------
-
+    print('.....................................................................')
+    print
     if settings.DEBUG == False:
-        adressdata = requests.get(url_adressdata, proxies=proxyDict)
+        # adressdata = requests.get(url_adressdata, proxies=proxyDict)
+        adressdata = requests.get(url_adressdata)
         with open(filename, 'wb') as filehandle:
             #   store the data as binary data stream
-            pickle.dump(j, filehandle)
+            pickle.dump(adressdata, filehandle)
     else:
+
         with open(filename, 'rb') as filehandle:
             adressdata = pickle.load(filehandle)
-
+    print(adressdata +'.....................................................................')
+    
     a = adressdata.json()
+    
     print(a)
+    
     lat = a[0]['Lat']
     lng = a[0]['Lng']
 

@@ -16,7 +16,9 @@ USE_S3 = False
 RUN_LOCAL = os.environ.get('FIXIE_URL', '') == ''
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = RUN_LOCAL
+
+# DEBUG = RUN_LOCAL
+DEBUG = False
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
