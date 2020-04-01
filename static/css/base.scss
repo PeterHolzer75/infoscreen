@@ -206,7 +206,8 @@ footer {
   background-position-y: center;
 
   // background-image: url("{{STATIC_URL}}img/green.jpg");
-  background-image: url("../img/green.jpg");
+  // background-image: url("../img/green.jpg");
+  background-image: url("{% static '../img/green.jpg' %}");
 }
 
 .linje_y {
@@ -215,7 +216,8 @@ footer {
   background-repeat: no-repeat;
 
   // background-image: url("{% static 'img/green.jpg' %}");
-  background-image: url("../img/yellow.jpg");
+  // background-image: url("../img/yellow.jpg");
+  background-image: url("{% static '../img/yellow.jpg' %}");
 }
 
 /* Polygon 1 */

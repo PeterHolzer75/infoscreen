@@ -217,14 +217,14 @@ footer {
   background-size: 100% 75%;
   background-repeat: no-repeat;
   background-position-y: center;
-  background-image: url("../img/green.jpg");
+  background-image: url("{% static '../img/green.jpg' %}");
 }
 
 .linje_y {
   text-align: center;
   background-size: 100% 90%;
   background-repeat: no-repeat;
-  background-image: url("../img/yellow.jpg");
+  background-image: url("{% static '../img/yellow.jpg' %}");
 }
 
 /* Polygon 1 */
