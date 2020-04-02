@@ -54,7 +54,7 @@ html {
 .cardheader img {
   margin-top: 0.5rem;
   height: 100%;
-  border:1px black solid;
+  border: 1px black solid;
 }
 
 .cardtitle {
@@ -201,7 +201,7 @@ footer {
 .busstable td {
   padding: 0.13rem;
   color: #555555;
-  font-size: 0.6rem;
+  font-size: 0.3rem;
   vertical-align: top;
 }
 

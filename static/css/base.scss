@@ -69,7 +69,7 @@ html {
 
   img {
     margin-top: 0.5rem;
-    height: 1
+    height: 1;
     /* border:1px black solid; */
   }
 }
@@ -214,10 +214,8 @@ footer {
   text-align: center;
   background-size: 100% 90%;
   background-repeat: no-repeat;
-
-  // background-image: url("{% static 'img/green.jpg' %}");
-  // background-image: url("../img/yellow.jpg");
-  background-image: url("{% static '../img/yellow.jpg' %}");
+  background-image: url("../img/yellow.jpg");
+  // background-image: url("{% static '../img/yellow.jpg' %}");
 }
 
 /* Polygon 1 */
@@ -233,8 +231,8 @@ footer {
 }
 
 .busstable tr {
-  background: #f5f5f5;
-  border-bottom: #dbdbdb solid 1px;
+  background: #ffffff;
+  border-bottom: #dddddd solid 1px;
   padding: 0.2rem 0.2rem;
 }
 
@@ -245,7 +243,7 @@ footer {
 .busstable td {
   padding: 0.13rem;
 
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   vertical-align: top;
   span {
     color: #fff;
@@ -405,7 +403,7 @@ hr {
 }
 
 .container_kollektivtrafik {
-  height: 380px;
+  height: 350px;
   width: 500px;
   background: rgb(255, 255, 255);
   // border: 1px solid rgb(100, 100, 100);
