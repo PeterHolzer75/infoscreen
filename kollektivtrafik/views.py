@@ -11,23 +11,22 @@ import os
 import math
 import skanetrafiken as sk
 
-def kollektivtrafik(request, adress):
 
+def kollektivtrafik(request, adress):
 
     if settings.DEBUG == False:
         proxyDict = {
             "http": os.environ.get('FIXIE_URL', ''),
             "https": os.environ.get('FIXIE_URL', '')
         }
-    
 
     template_name = 'kollektivtrafik/kollektivtrafik.html'
     url_adressdata = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/objektadressinfo?gatuadress=' + adress
-
+    HttpResponse(url_adressdata)
     # ----------------------------------------------------------------------
     # Skånetrafiken API
     # ----------------------------------------------------------------------
-    
+
     if settings.DEBUG == False:
         # adressdata = requests.get(url_adressdata, proxies=proxyDict)
         adressdata = requests.get(url_adressdata)
@@ -39,9 +38,9 @@ def kollektivtrafik(request, adress):
         filename = 'adressgronkullagatan.data'
         with open(filename, 'rb') as filehandle:
             adressdata = pickle.load(filehandle)
-    
+
     a = adressdata.json()
-    
+
     lat = a[0]['Lat']
     lng = a[0]['Lng']
 
