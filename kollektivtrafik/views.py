@@ -11,12 +11,7 @@ import os
 import math
 import skanetrafiken as sk
 
-
-# IP address
-
 def kollektivtrafik(request, adress):
-
-    filename = 'adressgronkullagatan.data'
 
 
     if settings.DEBUG == False:
@@ -32,27 +27,23 @@ def kollektivtrafik(request, adress):
     # ----------------------------------------------------------------------
     # Skånetrafiken API
     # ----------------------------------------------------------------------
-    print('.........................................bbb............................')
     
     if settings.DEBUG == False:
         # adressdata = requests.get(url_adressdata, proxies=proxyDict)
         adressdata = requests.get(url_adressdata)
-        with open(filename, 'wb') as filehandle:
-            #   store the data as binary data stream
-            pickle.dump(adressdata, filehandle)
+        # with open(filename, 'wb') as filehandle:
+        #     #   store the data as binary data stream
+        #     pickle.dump(adressdata, filehandle)
     else:
 
+        filename = 'adressgronkullagatan.data'
         with open(filename, 'rb') as filehandle:
             adressdata = pickle.load(filehandle)
     
     a = adressdata.json()
     
-    print(a)
-    
     lat = a[0]['Lat']
     lng = a[0]['Lng']
-
-    print(lat)
 
     if adressdata.status_code != 200:
         return HttpResponse(f'<h3>Error {adressdata.status_code}: Problem med API för adressdata</h3>')
@@ -77,7 +68,6 @@ def kollektivtrafik(request, adress):
 
     jour = rp["Journeys"]  # class list
 
-    print(jour)
     # print(type(jour))
 
     # new_str = json.dumps(jour, indent=2, sort_keys=True)
