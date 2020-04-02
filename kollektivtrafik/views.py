@@ -14,24 +14,26 @@ import skanetrafiken as sk
 
 def kollektivtrafik(request, adress):
 
+    print(f'Debug: {settings.DEBUG}')
+
     if settings.DEBUG == False:
         proxyDict = {
             "http": os.environ.get('FIXIE_URL', ''),
             "https": os.environ.get('FIXIE_URL', '')
         }
 
-    HttpResponse(proxyDict)
-
     template_name = 'kollektivtrafik/kollektivtrafik.html'
     url_adressdata = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/objektadressinfo?gatuadress=' + adress
+#
     HttpResponse(url_adressdata)
+
     # ----------------------------------------------------------------------
     # Skånetrafiken API
     # ----------------------------------------------------------------------
 
     if settings.DEBUG == False:
-        # adressdata = requests.get(url_adressdata, proxies=proxyDict)
-        adressdata = requests.get(url_adressdata)
+        adressdata = requests.get(url_adressdata, proxies=proxyDict)
+        # adressdata = requests.get(url_adressdata)
         # with open(filename, 'wb') as filehandle:
         #     #   store the data as binary data stream
         #     pickle.dump(adressdata, filehandle)
