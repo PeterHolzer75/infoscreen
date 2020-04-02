@@ -24,8 +24,7 @@ def kollektivtrafik(request, adress):
 
     template_name = 'kollektivtrafik/kollektivtrafik.html'
     url_adressdata = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/objektadressinfo?gatuadress=' + adress
-#
-    HttpResponse(url_adressdata)
+    #
 
     # ----------------------------------------------------------------------
     # Skånetrafiken API
