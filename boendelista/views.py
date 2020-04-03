@@ -50,22 +50,11 @@ def boendelista(request, adress):
     # -----------------------------------------------------------------------
 
     stl_vaning = 'font-size: 0.8rem;margin-bottom:0.5rem;'
-    stl_namn = 'font-size: 0.7rem;'
-    stl_nummer = 'font-size: 0.7rem;'
+    stl_namn_nummer = 'font-size: 0.7rem;'
 
     if antal >= 30:
-        stl_namn = 'font-size: 0.8rem;'
-        stl_nummer = 'font-size: 0.8rem;'
-        stl_vaning = 'font-size: 1.2rem;'
-
-    # stl_namn = 'font-size: 1.0rem;'
-    # stl_nummer = 'font-size: 1.0rem;'
-    # stl_vaning = 'font-size: 1.5rem;'
-
-    # if antal >= 30:
-    #     stl_namn = 'font-size: 0.8rem;'
-    #     stl_nummer = 'font-size: 0.8rem;'
-    #     stl_vaning = 'font-size: 1.2rem;'
+        stl_vaning = 'font-size: 1.0rem;margin-bottom:0.5rem;'
+        stl_namn_nummer = 'font-size: 0.7rem;'
 
     # HTML rendering
     # -----------------------------------------------------------------------
@@ -89,11 +78,11 @@ def boendelista(request, adress):
             v_old = adr['Vaning']
 
         s += '<div class="rad">\n'
-        s += f'<div class="namn" style="{stl_namn}">{adr["Kund1Namn"]}'
+        s += f'<div class="namn" style="{stl_namn_nummer}">{adr["Kund1Namn"]}'
         if adr['Kund2Namn']:
             s += f', {adr["Kund2Namn"]}'
         s += '</div>\n'
-        s += f'<div class="nummer" style="{stl_nummer}">' + \
+        s += f'<div class="nummer" style="{stl_namn_nummer}">' + \
             adr['Lagenhetsnummer'] + '</div>\n'
 
         s += '</div>\n'
