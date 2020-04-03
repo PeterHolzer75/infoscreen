@@ -37,6 +37,8 @@ def boendelista(request, adress):
 
     antal = len(data_b)
 
+    print(f'Antal lägenheter: {antal}')
+
     context = {
         'data': data_b,
     }
