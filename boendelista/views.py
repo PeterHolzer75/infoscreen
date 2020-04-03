@@ -47,7 +47,7 @@ def boendelista(request, adress):
     # Font-sizes
     # -----------------------------------------------------------------------
 
-    stl_vaning = 'font-size: 1rem;padding-top:0.3rem;margin-bottom:0.5rem;'
+    stl_vaning = 'font-size: 0.8rem;margin-bottom:0.5rem;'
     stl_namn = 'font-size: 0.7rem;'
     stl_nummer = 'font-size: 0.7rem;'
 
@@ -69,28 +69,34 @@ def boendelista(request, adress):
     # -----------------------------------------------------------------------
     # print(data_r)
 
-    s = '<div class="boendelista">'
+    s = ''
 
     v_old = ''
     for adr in data_b:
         if adr['Vaning'] != v_old:
-            s += f'<div class="vaning" style= "{stl_vaning};">'
-            s += adr['Vaning']
-            s += '</div>'
+            if v_old != '':
+                s += '</div>\n'
+                s += '</div>\n'
+
+            s += '<div class = "cont_vaning" >\n'
+            s += f'<div class="vaning" style= "{stl_vaning};">\n'
+            s += f'{adr["Vaningsbeteckning"]} </div>\n'
+
+            s += '<div class= "rader">\n'
+
             v_old = adr['Vaning']
 
-        s += '<div class="rad">'
+        s += '<div class="rad">\n'
         s += f'<div class="namn" style="{stl_namn}">{adr["Kund1Namn"]}'
         if adr['Kund2Namn']:
             s += f', {adr["Kund2Namn"]}'
-        s += '</div>'
+        s += '</div>\n'
         s += f'<div class="nummer" style="{stl_nummer}">' + \
-            adr['Lagenhetsnummer'] + '</div >'
+            adr['Lagenhetsnummer'] + '</div>\n'
 
-        s += '</div>'
-    s += '</div>'
-
-    print(s)
+        s += '</div>\n'
+    s += '</div>\n'
+    s += '</div>\n'
 
     context['boendelista'] = s
 

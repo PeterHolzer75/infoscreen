@@ -286,15 +286,42 @@ footer {
   /* border: 1px solid gray; */
   padding: 10px;
   color: color(text);
+  padding-left: 1.5rem;
+}
+
+.cont_vaning {
+  display: flex;
+  border-bottom: 2px solid rgb(233, 233, 233);
+  padding-top: 18px;
+}
+
+.rader {
+  // flex-direction: column;
+  // border: 1px solid green;
+  width: 90%;
+}
+
+.rad {
+  // font-size: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.4rem;
+  // border: 1px solid blue;
 }
 
 .vaning {
+  // flex-direction: column;
   font-weight: 600;
   /* font-size: 4.3rem; */
-  padding-top: 1rem;
   margin-bottom: 0.8rem;
   text-transform: uppercase;
-  border-bottom: 2px solid rgb(243, 243, 243);
+  width: 280px;
+}
+
+.namn {
+  padding-left: 1rem;
+  // border: 1px solid red;
 }
 
 .sidinfo p {
@@ -310,19 +337,9 @@ hr {
   padding-right: 2rem;
 }
 
-.namn {
-  padding-left: 1rem;
-}
-
 .nummer {
+  // border: 1px solid green;
   padding-right: 2rem;
-}
-
-.rad {
-  font-size: 1rem;
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 0.4rem;
 }
 
 /* Vector */
