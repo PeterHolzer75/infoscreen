@@ -50,14 +50,17 @@ def boendelista(request, adress):
     # -----------------------------------------------------------------------
     stl_vaning = 'font-size: 0.8rem;margin-bottom:0.5rem;'
     stl_namn_nummer = 'font-size: 0.7rem;'
+    stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.4rem;'
 
     if antal >= 30:
         stl_vaning = 'font-size: 1.0rem;margin-bottom:0.5rem;'
         stl_namn_nummer = 'font-size: 0.7rem;'
+        stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.4rem;'
 
     if antal >= 50:
-        stl_vaning = 'font-size: .8rem;margin-bottom:0.4rem;'
+        stl_vaning = 'font-size: .7rem;margin-bottom:0.4rem;'
         stl_namn_nummer = 'font-size: 0.6rem;'
+        stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.3rem;'
 
     # HTML rendering
     # -----------------------------------------------------------------------
@@ -80,7 +83,7 @@ def boendelista(request, adress):
 
             v_old = adr['Vaning']
 
-        s += '<div class="rad">\n'
+        s += f'<div class="rad" style = "{stl_rad}">\n'
         s += f'<div class="namn" style="{stl_namn_nummer}">{adr["Kund1Namn"]}'
         if adr['Kund2Namn']:
             s += f', {adr["Kund2Namn"]}'
