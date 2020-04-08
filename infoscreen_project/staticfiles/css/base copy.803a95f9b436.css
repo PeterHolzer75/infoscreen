@@ -1,0 +1,302 @@
+@font-face {
+  font-family: "century";
+  src: url("../fonts/GOTHIC.cfce6abbbff0.TTF") format("truetype");
+}
+@font-face {
+  font-family: "centuryb";
+  src: url("../fonts/GOTHICB.bc420c1c2b98.TTF") format("truetype");
+}
+
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+
+body,
+html {
+  background: black;
+  /* height: 100vh; */
+  width: 40vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 32px; /*base font-size för rem*/
+}
+
+/* Grid modellen */
+
+.container {
+  height: 1920px;
+  width: 1080px;
+  /* height: 960px;
+  width:540px;
+   */
+  background: white;
+  /* border: 30px solid white; */
+  /* align-items: center; */
+  /* justify-items: center; */
+
+  display: grid;
+  grid-template-columns: 50% auto;
+  grid-template-rows: 10% auto 20% 15% 15% 10%;
+  grid-template-areas:
+    "header header"
+    "aside1 section1"
+    "aside1 main"
+    "aside1 section2"
+    "aside1 busstable"
+    "footer footer";
+}
+
+.cardheader {
+  display:flex;
+  justify-content: space-between;
+}
+.cardheader img {
+margin-top:0.5rem;
+height:100%;
+/* border:1px black solid; */
+}
+
+.cardtitle {
+  /* border:1px black solid; */
+  font-family: "centuryb", sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  padding-top: 0.3rem;
+  color: #575757;
+}
+
+.cardtitle-2 {
+  /* font-family: "century", sans-serif; */
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding-top: 0.3rem;
+  color: #575757;
+}
+
+.gatunamn-header {
+  font-family: "century", sans-serif;
+  font-size: 2.0rem;
+  text-transform: uppercase;
+}
+
+.welcome {
+  font-family: "century", sans-serif;
+  font-size: 1rem;
+  padding-top: 0.5rem;
+}
+
+/* .gatunamn aside {
+  grid-area: aside1;
+  background-color: #ffffff;
+  margin-top: 1rem;
+} */
+
+.adress {
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+aside {
+  grid-area: aside1;
+}
+
+header {
+  grid-area: header;
+  background-color: #7baa20;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+
+#showtime {
+  font-size: 2.5rem;
+  padding: 0.3rem;
+}
+#showdate {
+  font-size: 1rem;
+  padding-left: 0.7rem;
+  padding-top: 0.5rem;
+}
+
+.balk {
+  width: 800px;
+  height: 3px;
+  background: white;
+  /* margin-bottom: 5px; */
+}
+
+.adress h3 {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+main {
+  grid-area: main;
+  background-color: #d3dcdf;
+  padding: 0rem 1rem 1rem 1rem;
+  color: rgb(63, 63, 63);
+}
+
+main p {
+  margin-top: 0.2rem;
+}
+
+main h3,
+h4 {
+  margin: 3px 3px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #4b96cf;
+  color: white;
+  padding-left: 10px;
+  display:flex;
+justify-content: space-between;
+}
+
+#section1 {
+  grid-area: section1;
+  background-color: #eaeaea;
+  padding: 0rem 1rem 1rem 1rem;
+  color: rgb(85, 85, 85);
+}
+
+#section1 img {
+  padding-top: 1rem;
+  width: 100%;
+}
+
+#busstable {
+  grid-area: busstable;
+  background-color: #f5f5f5;
+  padding: 0rem 0.5rem 0.5rem 0.5rem;
+}
+
+.busstable {
+  /* margin-top: 0.5rem; */
+  font-size: 0.5rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.busstable thead {
+  font-weight: 700;
+  text-align: left;
+}
+
+.linje {
+  text-align: center;
+}
+
+.busstable th {
+  color: #4d4d4d;
+  padding-bottom: 0.2rem;
+  padding-top: 0.5rem;
+  
+}
+
+.busstable tr {
+  background: #f5f5f5;
+  border-bottom: #dbdbdb solid 1px;
+  padding: 0.2rem 0.2rem;
+}
+
+/* .busstable tr:nth-child(even) {
+  background: #c5c5c5;
+} */
+
+.busstable td {
+  padding: 0.13rem;
+  color: #555555;
+  font-size: 0.6rem;
+  vertical-align: top;
+
+}
+
+#section1 img {
+  width: 100%;
+}
+
+.logotyp {
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.wheather {
+  /* padding-top: 1rem; */
+  
+  align-self: center;
+  padding-right: 1rem;
+  text-align: right;
+}
+
+
+#section2 {
+  grid-area: section2;
+  background-color: #c3ccbf;
+  color: #1d4d08;
+  padding: 0rem 1rem 1rem 1rem;
+}
+
+#section2 .cardtitle {
+  color: #1d4d08;
+}
+
+/* Grid modellen slut *******************************************************/
+
+.lista {
+  width: 98%;
+  height: 98%vh;
+  /* border: 1px solid gray; */
+  padding: 10px;
+  color: rgb(114, 114, 114);
+}
+
+.vaning {
+  font-weight: 600;
+  /* font-size: 4.3rem; */
+  padding-top: 1rem;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgb(243, 243, 243);
+}
+
+.sidinfo p {
+  font-size: xx-large;
+  padding-right: 5rem;
+}
+
+p {
+  font-size: 0.7rem;
+}
+
+hr {
+  padding-right: 2rem;
+}
+
+.namn {
+  padding-left: 1rem;
+}
+
+.nummer {
+  padding-right: 2rem;
+}
+
+.rad {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.4rem;
+}
+
+.footercontainer {
+  
+}
