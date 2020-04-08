@@ -31,14 +31,11 @@ def boendelista(request, adress):
     else:
 
         filename_b = 'adresser50.data'
-
         with open(filename_b, 'rb') as filehandle:
             data_b = pickle.load(filehandle)
 
     antal = len(data_b)
-
     print(f'Antal lägenheter: {antal}')
-
     context = {
         'data': data_b,
     }

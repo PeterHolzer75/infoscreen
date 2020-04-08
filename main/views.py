@@ -9,13 +9,10 @@ import os
 import math
 import skanetrafiken as sk
 
-
 proxyDict = {
     "http": os.environ.get('FIXIE_URL', ''),
     "https": os.environ.get('FIXIE_URL', '')
 }
-r = requests.get('http://www.example.com', proxies=proxyDict)
-
 
 # IP address
 
@@ -33,6 +30,8 @@ def ip(request):
 
 
 def infoscreen(request, adress):
+
+
     # adress = 'Grönkullagatan 9B'
     template_name = 'main/index.html'
     HAS_ACCESS = True
@@ -42,7 +41,6 @@ def infoscreen(request, adress):
         "https": os.environ.get('FIXIE_URL', '')
     }
 
-    # r = requests.get('http://www.example.com', proxies=proxyDict)
 
     url_adressdata = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/objektadressinfo?gatuadress=' + adress
     url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_V2?gatuadress=' + adress
