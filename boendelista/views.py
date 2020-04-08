@@ -11,32 +11,34 @@ import os
 
 def boendelista(request, adress):
 
-    # FIXIE_URL = http://fixie:Uud9w5EzrZweESt@olympic.usefixie.com:80
+    # --  FIXIE_URL = http://fixie:Uud9w5EzrZweESt@olympic.usefixie.com:80
 
-    proxyDict = {
-        "http": os.environ.get('FIXIE_URL', ''),
-        "https": os.environ.get('FIXIE_URL', '')
-    }
+    # proxyDict = {
+    #     "http": os.environ.get('FIXIE_URL', ''),
+    #     "https": os.environ.get('FIXIE_URL', '')
+    # }
 
-    # adress = 'Grönkullagatan 9B'
     template_name = 'boendelista/boendelista.html'
 
     url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_V2?gatuadress=' + adress
 
-    if settings.DEBUG == False:
+    if False:
+    # if settings.DEBUG == False:
 
         b = requests.get(url_b, proxies=proxyDict)
+     
         if b.status_code != 200:
             return HttpResponse(f'<h3>Error {b.status_code}: Problem med API för boendelista</h3>')
         data_b = b.json()
 
     else:
 
-        filename_b = 'adresser50.data'
+        filename_b = 'boende_sallbo.data'
         with open(filename_b, 'rb') as filehandle:
             data_b = pickle.load(filehandle)
 
     antal = len(data_b)
+
     print(f'Antal lägenheter: {antal}')
     context = {
         'data': data_b,
