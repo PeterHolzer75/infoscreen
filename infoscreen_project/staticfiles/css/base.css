@@ -310,16 +310,6 @@ footer {
   width: 90%;
 }
 
-.rad {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-bottom: 0.4rem;
-}
-
 .vaning {
   font-weight: 600;
   /* font-size: 4.3rem; */
