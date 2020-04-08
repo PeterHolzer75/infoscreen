@@ -11,6 +11,8 @@ import os
 
 def boendelista(request, adress):
 
+    # FIXIE_URL = http://fixie:Uud9w5EzrZweESt@olympic.usefixie.com:80
+
     proxyDict = {
         "http": os.environ.get('FIXIE_URL', ''),
         "https": os.environ.get('FIXIE_URL', '')
