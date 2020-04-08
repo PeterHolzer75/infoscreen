@@ -30,7 +30,7 @@ def boendelista(request, adress):
 
     else:
 
-        filename_b = 'adresser29.data'
+        filename_b = 'adresser50.data'
 
         with open(filename_b, 'rb') as filehandle:
             data_b = pickle.load(filehandle)
@@ -48,13 +48,16 @@ def boendelista(request, adress):
 
     # Font-sizes
     # -----------------------------------------------------------------------
-
     stl_vaning = 'font-size: 0.8rem;margin-bottom:0.5rem;'
     stl_namn_nummer = 'font-size: 0.7rem;'
 
     if antal >= 30:
         stl_vaning = 'font-size: 1.0rem;margin-bottom:0.5rem;'
         stl_namn_nummer = 'font-size: 0.7rem;'
+
+    if antal >= 50:
+        stl_vaning = 'font-size: .8rem;margin-bottom:0.4rem;'
+        stl_namn_nummer = 'font-size: 0.6rem;'
 
     # HTML rendering
     # -----------------------------------------------------------------------
