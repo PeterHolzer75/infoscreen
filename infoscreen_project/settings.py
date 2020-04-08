@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import django_heroku
 
 USE_S3 = False
 RUN_LOCAL = os.environ.get('FIXIE_URL', '') == ''
@@ -182,3 +183,5 @@ STATICFILES_DIRS = (
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 WHITENOISE_USE_FINDERS = True
+
+django_heroku.settings(locals())
