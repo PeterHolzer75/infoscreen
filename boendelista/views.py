@@ -60,8 +60,8 @@ def boendelista(request, adress):
 
     if antal >= 50:
         stl_vaning = 'font-size: .7rem; margin-bottom:0.4rem;'
-        stl_namn_nummer = 'font-size: 0.55rem;'
-        stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.22rem;'
+        stl_namn_nummer = 'font-size: 0.5rem;'
+        stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.20rem;'
 
     # HTML rendering
     # -----------------------------------------------------------------------
