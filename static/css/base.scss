@@ -281,19 +281,23 @@ footer {
 /* Grid modellen slut *******************************************************/
 
 .boendelista {
-  width: 98%;
+  width: 95%;
   height: 98%vh;
-  /* border: 1px solid gray; */
-  padding: 10px;
-  margin-right: 2rem;
+  border: 1px solid rgb(190, 12, 12);
+  // padding: 10px;
+  // margin-right: 2rem;
   color: color(text);
   padding-left: 1.5rem;
+  // padding-right: 1.5rem;
 }
 
 .cont_vaning {
   display: flex;
   border-bottom: 2px solid rgb(233, 233, 233);
-  padding-top: 15px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  // border: 1px solid rgb(201, 100, 6);
 }
 
 .rader {

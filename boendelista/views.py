@@ -23,10 +23,10 @@ def boendelista(request, adress):
     url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_V2?gatuadress=' + adress
 
     if False:
-    # if settings.DEBUG == False:
+        # if settings.DEBUG == False:
 
         b = requests.get(url_b, proxies=proxyDict)
-     
+
         if b.status_code != 200:
             return HttpResponse(f'<h3>Error {b.status_code}: Problem med API för boendelista</h3>')
         data_b = b.json()
@@ -61,7 +61,7 @@ def boendelista(request, adress):
     if antal >= 50:
         stl_vaning = 'font-size: .7rem; margin-bottom:0.4rem;'
         stl_namn_nummer = 'font-size: 0.55rem;'
-        stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.25rem;'
+        stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.22rem;'
 
     # HTML rendering
     # -----------------------------------------------------------------------
