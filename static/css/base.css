@@ -292,6 +292,7 @@ footer {
 .boendelista {
   width: 95%;
   height: 98%vh;
+  padding-top: 0.5rem;
   color: #616161;
   padding-left: 1.5rem;
 }
