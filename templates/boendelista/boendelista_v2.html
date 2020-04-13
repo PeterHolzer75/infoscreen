@@ -1,0 +1,26 @@
+{% extends "_base_simple.html" %}
+{% load static %}
+
+{% block content%}
+
+
+
+<div class="container_boendelista">
+    <div class="boendelista">
+        {% for boende in allaboende%}
+        <div class="cont_vaning">
+            <div class="vaning" style="font-size: .7rem; margin-bottom:0.4rem;">
+                {{  boende.Vaning }}</div>
+            <div class="rader">
+                <div class="rad" style="display: flex;justify-content: space-between;  padding-bottom: 0.21rem;">
+                    <div class="namn" style="font-size: 0.5rem;">{{boende.Kund1Namn}}</div>
+                    <div class="nummer" style="font-size: 0.5rem;">{{boende.Lagenhetsnummer}}</div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content%}
