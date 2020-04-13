@@ -27,7 +27,7 @@ def boendelista(request, adress):
 
         b = requests.get(url_b, proxies=proxyDict)
 
-        if b.status_code != 200:
+        if b.status_code not in range(200, 299):
             return HttpResponse(f'<h3>Error {b.status_code}: Problem med API för boendelista</h3>')
         data_b = b.json()
 
@@ -59,13 +59,13 @@ def boendelista(request, adress):
         stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.4rem;'
 
     if antal >= 50:
-        stl_vaning = 'font-size: .7rem; margin-bottom:0.4rem;'
+        stl_vaning = 'font-size: 100px; margin-bottom:0.4rem;'
         stl_namn_nummer = 'font-size: 0.5rem;'
         stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.21rem;'
 
     # HTML rendering
     # -----------------------------------------------------------------------
-    # print(data_r)
+    print(data_b)
 
     s = ''
 
@@ -78,7 +78,8 @@ def boendelista(request, adress):
 
             s += '<div class = "cont_vaning" >\n'
             s += f'<div class="vaning" style= "{stl_vaning};">\n'
-            s += f'{adr["Vaningsbeteckning"]} </div>\n'
+            # s += f'{adr["Vaningsbeteckning"]} </div>\n'
+            s += f'{adr["Vaning"]} </div>\n'
 
             s += '<div class= "rader">\n'
 
@@ -97,5 +98,4 @@ def boendelista(request, adress):
     s += '</div>\n'
 
     context['boendelista'] = s
-
     return render(request, template_name, context)
