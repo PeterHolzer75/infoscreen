@@ -290,7 +290,7 @@ footer {
 
 /* Grid modellen slut *******************************************************/
 .boendelista {
-  width: 98vw;
+  width: 95vw;
   height: 98vh;
   padding-top: 0.2rem;
   color: #616161;
@@ -341,7 +341,7 @@ footer {
 
 .namn_nummer-50 {
   font-size: 0.5rem;
-  color: #5a5a5a;
+  color: #616161;
 }
 
 .sidinfo p {
