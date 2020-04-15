@@ -48,9 +48,15 @@ def boendelista(request, adress):
     context['gatuadress'] = adress
 
     # Font-sizes
+
     # -----------------------------------------------------------------------
+
     stl_vaning = 'font-size: 0.8rem;margin-bottom:0.5rem;'
+    stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.4rem;'
     stl_namn_nummer = 'font-size: 0.7rem;'
+
+    stl_vaning = 'vaning'
+    stl_namn_nummer = 'namn_nummer'
     stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.4rem;'
 
     if antal >= 30:
@@ -59,13 +65,13 @@ def boendelista(request, adress):
         stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.4rem;'
 
     if antal >= 50:
-        stl_vaning = 'font-size: 100px; margin-bottom:0.4rem;'
-        stl_namn_nummer = 'font-size: 0.5rem;'
-        stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.21rem;'
+        stl_vaning = 'vaning-50'
+        stl_rad = 'rad-50'
+        stl_namn_nummer = 'namn_nummer-50'
 
     # HTML rendering
     # -----------------------------------------------------------------------
-    print(data_b)
+    # print(data_b)
 
     s = ''
 
@@ -77,20 +83,19 @@ def boendelista(request, adress):
                 s += '</div>\n'
 
             s += '<div class = "cont_vaning" >\n'
-            s += f'<div class="vaning" style= "{stl_vaning};">\n'
+            s += f'<div class="{stl_vaning}" >\n'
             # s += f'{adr["Vaningsbeteckning"]} </div>\n'
             s += f'{adr["Vaning"]} </div>\n'
 
             s += '<div class= "rader">\n'
 
             v_old = adr['Vaning']
-
-        s += f'<div class="rad" style = "{stl_rad}">\n'
-        s += f'<div class="namn" style="{stl_namn_nummer}">{adr["Kund1Namn"]}'
+        s += f'<div class= "{stl_rad}">\n'
+        s += f'<div class="{stl_namn_nummer}" >{adr["Kund1Namn"]}'
         if adr['Kund2Namn']:
             s += f', {adr["Kund2Namn"]}'
         s += '</div>\n'
-        s += f'<div class="nummer" style="{stl_namn_nummer}">' + \
+        s += f'<div class="{stl_namn_nummer}">' + \
             adr['Lagenhetsnummer'] + '</div>\n'
 
         s += '</div>\n'
