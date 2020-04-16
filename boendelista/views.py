@@ -16,12 +16,10 @@ def boendelista(request, adress):
         "https": os.environ.get('FIXIE_URL', '')
     }
 
-    return HttpResponse(settings.DEBUG)
-
     template_name = 'boendelista/boendelista.html'
 
     url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_V2?gatuadress=' + adress
-
+    return HttpResponse(url_b)
     # if False:
     if settings.DEBUG == False:
         b = requests.get(url_b, proxies=proxyDict)
