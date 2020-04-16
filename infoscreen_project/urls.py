@@ -12,10 +12,10 @@ urlpatterns = [
     path('kollektivtrafik/', include('kollektivtrafik.urls')),
     path('resurser/', include('resurser.urls')),
 
-    path('', include('main.urls')),
+    path('infoscreen/', include('main.urls')),
 
-  
+
     # path('busstider', include('skanetrafiken.urls')),
     path('admin/', admin.site.urls),
-    
+
 ]

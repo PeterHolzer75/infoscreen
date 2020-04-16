@@ -48,19 +48,9 @@ def boendelista(request, adress):
     # Font-sizes
 
     # -----------------------------------------------------------------------
-
-    stl_vaning = 'font-size: 0.8rem;margin-bottom:0.5rem;'
-    stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.4rem;'
-    stl_namn_nummer = 'font-size: 0.7rem;'
-
-    stl_vaning = 'vaning'
-    stl_namn_nummer = 'namn_nummer'
-    stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.4rem;'
-
-    if antal >= 30:
-        stl_vaning = 'font-size: 1.0rem;margin-bottom:0.5rem;'
-        stl_namn_nummer = 'font-size: 0.7rem;'
-        stl_rad = 'display: flex;justify-content: space-between;  padding-bottom: 0.4rem;'
+    stl_vaning = 'vaning-50'
+    stl_rad = 'rad-50'
+    stl_namn_nummer = 'namn_nummer-50'
 
     if antal >= 50:
         stl_vaning = 'vaning-50'

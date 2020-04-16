@@ -16,6 +16,7 @@ proxyDict = {
 
 # IP address
 
+
 def get_host_name_IP():
     try:
         host_name = socket.gethostname()
@@ -31,7 +32,6 @@ def ip(request):
 
 def infoscreen(request, adress):
 
-
     # adress = 'Grönkullagatan 9B'
     template_name = 'main/index.html'
     HAS_ACCESS = True
@@ -40,7 +40,6 @@ def infoscreen(request, adress):
         "http": os.environ.get('FIXIE_URL', ''),
         "https": os.environ.get('FIXIE_URL', '')
     }
-
 
     url_adressdata = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/objektadressinfo?gatuadress=' + adress
     url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_V2?gatuadress=' + adress
@@ -80,11 +79,6 @@ def infoscreen(request, adress):
 
     antal = len(data_b)
     print(f'len:{len(data_b)}')
-
-    # OPenwheather API
-    # api.openweathermap.org / data / 2.5 / weather ? q = London, uk & APPID = 9fc3e91e885cb4a9bd1efdd30313ecfb
-
-    # tmeans = sk.trafficmeans()
 
     # ----------------------------------------------------------------------
     # Skånetrafiken API
