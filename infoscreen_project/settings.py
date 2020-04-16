@@ -31,7 +31,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
-ALLOWED_HOSTS = ['hbgheminfoscreen.herokuapp.com', '127.0.0.1', ]
+ALLOWED_HOSTS = ['hbgheminfo.herokuapp.com', '127.0.0.1', ]
 
 # Application definition
 

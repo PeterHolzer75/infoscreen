@@ -14,8 +14,6 @@ import skanetrafiken as sk
 
 def kollektivtrafik(request, adress):
 
-    print(f'Debug: {settings.DEBUG}')
-
     if settings.DEBUG == False:
         proxyDict = {
             "http": os.environ.get('FIXIE_URL', ''),

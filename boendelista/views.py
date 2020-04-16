@@ -22,9 +22,7 @@ def boendelista(request, adress):
 
     # if False:
     if settings.DEBUG == False:
-
         b = requests.get(url_b, proxies=proxyDict)
-
         if b.status_code not in range(200, 299):
             return HttpResponse(f'<h3>Error {b.status_code}: Problem med API för boendelista</h3>')
         data_b = b.json()

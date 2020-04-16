@@ -9,18 +9,20 @@ import os
 import math
 import skanetrafiken as sk
 
-proxyDict = {
-    "http": os.environ.get('FIXIE_URL', ''),
-    "https": os.environ.get('FIXIE_URL', '')
-}
 
 # IP address
 
 
 def get_host_name_IP():
     try:
-        host_name = socket.gethostname()
+
+        proxyDict = {
+            "http": os.environ.get('FIXIE_URL', ''),
+            "https": os.environ.get('FIXIE_URL', '')
+        }
+        host_name = socket.gethostname(proxies=proxyDict)
         host_ip = socket.gethostbyname(host_name)
+
     except:
         print("Unable to get Hostname and IP")
     return host_name, host_ip
