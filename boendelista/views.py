@@ -82,7 +82,7 @@ def boendelista(request, adress):
         s += '</div>\n'
     s += '</div>\n'
     s += '</div>\n'
-    return HttpResponse(s)
+    # return HttpResponse(s)
 
     context['boendelista'] = s
     return render(request, template_name, context)
