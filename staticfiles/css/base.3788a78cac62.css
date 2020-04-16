@@ -1,12 +1,12 @@
 @charset "UTF-8";
 @font-face {
   font-family: "century";
-  src: url("../fonts/GOTHIC.TTF") format("truetype");
+  src: url("../fonts/GOTHIC.cfce6abbbff0.TTF") format("truetype");
 }
 
 @font-face {
   font-family: "centuryb";
-  src: url("../fonts/GOTHICB.TTF") format("truetype");
+  src: url("../fonts/GOTHICB.bc420c1c2b98.TTF") format("truetype");
 }
 
 * {
@@ -217,14 +217,14 @@ footer {
   background-size: 100% 75%;
   background-repeat: no-repeat;
   background-position-y: center;
-  background-image: url("../img/green.jpg");
+  background-image: url("../img/green.a71fb799ca0e.jpg");
 }
 
 .linje_y {
   text-align: center;
   background-size: 100% 90%;
   background-repeat: no-repeat;
-  background-image: url("../img/yellow.jpg");
+  background-image: url("../img/yellow.c3740018cb46.jpg");
 }
 
 /* Polygon 1 */
