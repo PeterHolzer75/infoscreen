@@ -16,6 +16,8 @@ def boendelista(request, adress):
         "https": os.environ.get('FIXIE_URL', '')
     }
 
+    return HttpResponse(proxyDict)
+
     template_name = 'boendelista/boendelista.html'
 
     url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_V2?gatuadress=' + adress
