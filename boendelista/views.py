@@ -11,19 +11,17 @@ import os
 
 def boendelista(request, adress):
 
-    # --  FIXIE_URL = http://fixie:Uud9w5EzrZweESt@olympic.usefixie.com:80
-
-    # proxyDict = {
-    #     "http": os.environ.get('FIXIE_URL', ''),
-    #     "https": os.environ.get('FIXIE_URL', '')
-    # }
+    proxyDict = {
+        "http": os.environ.get('FIXIE_URL', ''),
+        "https": os.environ.get('FIXIE_URL', '')
+    }
 
     template_name = 'boendelista/boendelista.html'
 
     url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_V2?gatuadress=' + adress
 
-    if False:
-        # if settings.DEBUG == False:
+    # if False:
+    if settings.DEBUG == False:
 
         b = requests.get(url_b, proxies=proxyDict)
 
