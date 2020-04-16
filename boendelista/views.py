@@ -34,7 +34,6 @@ def boendelista(request, adress):
     antal = len(data_b)
 
     print(f'Antal lägenheter: {antal}')
-    return HttpResponse(antal)
 
     context = {
         'data': data_b,
@@ -60,7 +59,6 @@ def boendelista(request, adress):
     # print(data_b)
 
     s = ''
-
     v_old = ''
     for adr in data_b:
         if adr['Vaning'] != v_old:
@@ -70,11 +68,8 @@ def boendelista(request, adress):
 
             s += '<div class = "cont_vaning" >\n'
             s += f'<div class="{stl_vaning}" >\n'
-            # s += f'{adr["Vaningsbeteckning"]} </div>\n'
             s += f'{adr["Vaning"]} </div>\n'
-
             s += '<div class= "rader">\n'
-
             v_old = adr['Vaning']
         s += f'<div class= "{stl_rad}">\n'
         s += f'<div class="{stl_namn_nummer}" >{adr["Kund1Namn"]}'
@@ -87,6 +82,7 @@ def boendelista(request, adress):
         s += '</div>\n'
     s += '</div>\n'
     s += '</div>\n'
+    return HttpResponse(s)
 
     context['boendelista'] = s
     return render(request, template_name, context)
