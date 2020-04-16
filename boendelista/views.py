@@ -12,8 +12,8 @@ import os
 def boendelista(request, adress):
 
     proxyDict = {
-        "http": os.environ.get('FIXIE_URL', ''),
-        "https": os.environ.get('FIXIE_URL', '')
+        "http": os.environ.get('FIXIE_URL', 'x'),
+        "https": os.environ.get('FIXIE_URL', 'y')
     }
 
     return HttpResponse(proxyDict)
