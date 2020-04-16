@@ -23,13 +23,10 @@ def boendelista(request, adress):
     # if False:
     if settings.DEBUG == False:
         b = requests.get(url_b, proxies=proxyDict)
-        return HttpResponse(b)
         if b.status_code not in range(200, 299):
             return HttpResponse(f'<h3>Error {b.status_code}: Problem med API för boendelista</h3>')
         data_b = b.json()
-
     else:
-
         filename_b = 'boende_sallbo.data'
         with open(filename_b, 'rb') as filehandle:
             data_b = pickle.load(filehandle)
@@ -37,6 +34,8 @@ def boendelista(request, adress):
     antal = len(data_b)
 
     print(f'Antal lägenheter: {antal}')
+    return HttpResponse(antal)
+
     context = {
         'data': data_b,
     }
