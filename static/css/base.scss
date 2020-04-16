@@ -281,6 +281,7 @@ footer {
 /* Grid modellen slut *******************************************************/
 
 // Boendelista ---------------------------------------
+// Hela conatiner för listan
 .boendelista {
   width: 95vw;
   height: 98vh;
@@ -289,7 +290,7 @@ footer {
   padding-top: 0.2rem;
   color: color(text);
 }
-
+// Container som innehåller alla lgh för en våning
 .cont_vaning {
   display: flex;
   border-bottom: 2px solid rgb(233, 233, 233);
@@ -299,21 +300,19 @@ footer {
   // border: 1px solid rgb(201, 100, 6);
 }
 
+// Själva våningsbeteckning
 .vaning {
   // flex-direction: column;
-  // font-weight: 600;
-
-  font-weight: 200;
+  font-weight: 600;
   color: rgba(145, 145, 145, 0.5);
   text-align: center;
   margin-bottom: 0.8rem;
   text-transform: uppercase;
   width: 220px;
+  border: 1px solid rgb(201, 100, 6);
 }
 
 .vaning-50 {
-  // flex-direction: column;
-  // font-weight: 600;
   font-size: 80px;
   font-weight: 600;
   color: rgba(145, 145, 145, 0.5);

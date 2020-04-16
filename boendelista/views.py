@@ -20,8 +20,8 @@ def boendelista(request, adress):
 
     url_b = f'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_v2?gatuadress={adress}'
 
-    if 1 == 0:
-        # if settings.DEBUG == False:
+    # if 1 == 0:
+    if settings.DEBUG == False:
         b = requests.get(url_b, proxies=proxyDict)
         if b.status_code not in range(200, 299):
             return HttpResponse(f'<h3>Error {b.status_code}: Problem med API för boendelista</h3>')
