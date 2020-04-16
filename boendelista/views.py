@@ -16,7 +16,7 @@ def boendelista(request, adress):
         "https": os.environ.get('FIXIE_URL', '')
     }
 
-    return HttpResponse(os.environ.get('SECRET_KEY', ''))
+    return HttpResponse(os.environ.get('FIXIE_URL', ''))
 
     template_name = 'boendelista/boendelista.html'
 
