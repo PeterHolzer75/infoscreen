@@ -18,10 +18,11 @@ def boendelista(request, adress):
 
     template_name = 'boendelista/boendelista.html'
 
-    url_b = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_V2?gatuadress=' + adress
-    return HttpResponse(url_b)
+    url_b = f'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusboendelista_v2?gatuadress={adress}'
+
     # if False:
     if settings.DEBUG == False:
+        return HttpResponse(url_b)
         b = requests.get(url_b, proxies=proxyDict)
         if b.status_code not in range(200, 299):
             return HttpResponse(f'<h3>Error {b.status_code}: Problem med API för boendelista</h3>')
