@@ -12,11 +12,11 @@ import os
 def boendelista(request, adress):
 
     proxyDict = {
-        "http": os.environ.get('FIXIE_URL', 'x'),
-        "https": os.environ.get('FIXIE_URL', 'y')
+        "http": os.environ.get('FIXIE_URL', ''),
+        "https": os.environ.get('FIXIE_URL', '')
     }
 
-    return HttpResponse(proxyDict)
+    return HttpResponse(os.environ.get('SECRET_KEY', ''))
 
     template_name = 'boendelista/boendelista.html'
 
