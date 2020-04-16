@@ -36,7 +36,7 @@ def boendelista(request, adress):
     print(f'Antal lägenheter: {antal}')
 
     context = {
-        'data': data_b,
+        # 'data': data_b,
     }
 
     context['antal'] = antal
@@ -85,4 +85,5 @@ def boendelista(request, adress):
     # return HttpResponse(s)
 
     context['boendelista'] = s
+
     return render(request, template_name, context)
