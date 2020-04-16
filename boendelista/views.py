@@ -16,7 +16,7 @@ def boendelista(request, adress):
         "https": os.environ.get('FIXIE_URL', '')
     }
 
-    return HttpResponse(os.environ.get('FIXIE_URL', ''))
+    return HttpResponse(proxyDict)
 
     template_name = 'boendelista/boendelista.html'
 
