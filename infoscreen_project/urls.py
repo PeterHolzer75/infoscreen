@@ -3,7 +3,7 @@
 # ========================================================
 from django.contrib import admin
 from django.urls import path, include
-# from main import views
+from main import views
 
 
 urlpatterns = [
@@ -17,5 +17,6 @@ urlpatterns = [
 
     # path('busstider', include('skanetrafiken.urls')),
     path('admin/', admin.site.urls),
+    path('ip/', views.ip),
 
 ]
