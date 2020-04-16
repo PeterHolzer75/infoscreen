@@ -293,7 +293,7 @@ footer {
   width: 95vw;
   height: 98vh;
   padding-top: 0.2rem;
-  color: #555555;
+  color: #616161;
 }
 
 .cont_vaning {
@@ -306,15 +306,11 @@ footer {
   padding-bottom: 5px;
 }
 
-.rader {
-  width: 98%;
-}
-
-.vaning-1 {
-  font-size: 60px;
-  font-weight: 500;
+.vaning {
+  font-weight: 200;
   color: rgba(145, 145, 145, 0.5);
   text-align: center;
+  margin-bottom: 0.8rem;
   text-transform: uppercase;
   width: 220px;
 }
@@ -329,14 +325,8 @@ footer {
   margin-bottom: 0.4rem;
 }
 
-.rad-1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-bottom: 0.25rem;
+.rader {
+  width: 98%;
 }
 
 .rad-50 {
@@ -349,14 +339,9 @@ footer {
   padding-bottom: 0.21rem;
 }
 
-.namn_nummer-1 {
-  font-size: 0.7rem;
-  color: #555555;
-}
-
 .namn_nummer-50 {
   font-size: 0.5rem;
-  color: #555555;
+  color: #616161;
 }
 
 .sidinfo p {
@@ -391,19 +376,19 @@ hr {
 }
 
 .container_resurser p {
-  color: #555555;
+  color: #616161;
   font-size: 16px;
   margin-top: 5px;
 }
 
 .container_resurser h2 {
-  color: #555555;
+  color: #616161;
   font-size: 30px;
   margin: 3px 3px;
 }
 
 .container_resurser h3 {
-  color: #555555;
+  color: #616161;
   font-size: 20px;
   margin-bottom: 3px;
 }
@@ -440,27 +425,27 @@ hr {
 }
 
 .title_resurser {
-  color: #555555;
+  color: #616161;
   font-size: 1rem;
   font-weight: 600;
   padding-bottom: 15px;
 }
 
 .utitle_resurser {
-  color: #555555;
+  color: #616161;
   font-size: 0.7rem;
   font-weight: 600;
 }
 
 .title_resurser {
-  color: #555555;
+  color: #616161;
   font-size: 1rem;
   font-weight: 600;
   padding-bottom: 15px;
 }
 
 .utitle_resurser {
-  color: #555555;
+  color: #616161;
   font-size: 0.7rem;
   font-weight: 600;
 }
@@ -472,4 +457,4 @@ hr {
   padding: 10px;
   border-radius: 5px;
 }
-/*# sourceMappingURL=base.css.map */
+/*# sourceMappingURL=base.c8961805c558.css.map */

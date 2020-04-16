@@ -300,11 +300,12 @@ footer {
   // border: 1px solid rgb(201, 100, 6);
 }
 
-// Själva våningsbeteckning
+// Radcontainer
 .rader {
   width: 98%;
 }
 
+// Själva våningsbeteckning
 .vaning-1 {
   font-size: 60px;
   font-weight: 500;
@@ -312,7 +313,7 @@ footer {
   text-align: center;
   text-transform: uppercase;
   width: 220px;
-  margin-bottom: 0.4rem;
+  // margin-bottom: 0.4rem;
 }
 
 .vaning-50 {

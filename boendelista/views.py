@@ -27,7 +27,8 @@ def boendelista(request, adress):
             return HttpResponse(f'<h3>Error {b.status_code}: Problem med API för boendelista</h3>')
         data_b = b.json()
     else:
-        filename_b = 'boende_sallbo.data'
+        # filename_b = 'boende_sallbo.data'
+        filename_b = 'adresser6.data'
         with open(filename_b, 'rb') as filehandle:
             data_b = pickle.load(filehandle)
 
@@ -58,6 +59,8 @@ def boendelista(request, adress):
     # -----------------------------------------------------------------------
     # print(data_b)
 
+    print(stl_vaning)
+
     s = ''
     v_old = ''
     for adr in data_b:
@@ -67,7 +70,7 @@ def boendelista(request, adress):
                 s += '</div>\n'
 
             s += '<div class = "cont_vaning" >\n'
-            s += f'<div class="{stl_vaning}" >\n'
+            s += f'<div class="{stl_vaning}">'
             s += f'{adr["Vaning"]} </div>\n'
             s += '<div class= "rader">\n'
             v_old = adr['Vaning']
@@ -85,5 +88,6 @@ def boendelista(request, adress):
     # return HttpResponse(s)
 
     context['boendelista'] = s
+    print(s)
 
     return render(request, template_name, context)
