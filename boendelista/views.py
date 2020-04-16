@@ -45,9 +45,9 @@ def boendelista(request, adress):
     # Font-sizes
 
     # -----------------------------------------------------------------------
-    stl_vaning = 'vaning-50'
-    stl_rad = 'rad-50'
-    stl_namn_nummer = 'namn_nummer-50'
+    stl_vaning = 'vaning-1'
+    stl_rad = 'rad-1'
+    stl_namn_nummer = 'namn_nummer-1'
 
     if antal >= 50:
         stl_vaning = 'vaning-50'

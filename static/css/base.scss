@@ -18,7 +18,7 @@ $colors: (
   primary-light: lighten(#005dff, 40%),
   primary-dark: darken(#005dff, 40%),
   accent: #fff6bb,
-  text: #616161,
+  text: #555555,
   st_green: #43b02a,
   st_yellow: #fec900,
 );
@@ -301,15 +301,18 @@ footer {
 }
 
 // Själva våningsbeteckning
-.vaning {
-  // flex-direction: column;
-  font-weight: 600;
+.rader {
+  width: 98%;
+}
+
+.vaning-1 {
+  font-size: 60px;
+  font-weight: 500;
   color: rgba(145, 145, 145, 0.5);
   text-align: center;
-  margin-bottom: 0.8rem;
   text-transform: uppercase;
   width: 220px;
-  border: 1px solid rgb(201, 100, 6);
+  margin-bottom: 0.4rem;
 }
 
 .vaning-50 {
@@ -322,14 +325,21 @@ footer {
   margin-bottom: 0.4rem;
 }
 
-.rader {
-  width: 98%;
+.rad-1 {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.25rem;
 }
 
 .rad-50 {
   display: flex;
   justify-content: space-between;
   padding-bottom: 0.21rem;
+}
+
+.namn_nummer-1 {
+  font-size: 0.7rem;
+  color: color(text);
 }
 
 .namn_nummer-50 {
