@@ -69,10 +69,12 @@ def boendelista(request, adress):
                 s += '</div>\n'
                 s += '</div>\n'
 
+            s += '<div class= "hr_imellan"></div>\n'
             s += '<div class = "cont_vaning" >\n'
             s += f'<div class="{stl_vaning}">'
             s += f'{adr["Vaning"]} </div>\n'
             s += '<div class= "rader">\n'
+
             v_old = adr['Vaning']
         s += f'<div class= "{stl_rad}">\n'
         s += f'<div class="{stl_namn_nummer}" >{adr["Kund1Namn"]}'
@@ -81,8 +83,8 @@ def boendelista(request, adress):
         s += '</div>\n'
         s += f'<div class="{stl_namn_nummer}">' + \
             adr['Lagenhetsnummer'] + '</div>\n'
-
         s += '</div>\n'
+
     s += '</div>\n'
     s += '</div>\n'
     # return HttpResponse(s)
