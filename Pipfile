@@ -16,6 +16,7 @@ lxml = "*"
 skanetrafiken = "*"
 django-microsoft-auth = "*"
 django-heroku = "*"
+pillow = "*"
 
 [requires]
 python_version = "*"

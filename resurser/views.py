@@ -8,6 +8,7 @@ import json
 import pickle
 import os
 import math
+from PIL import Image
 
 # IP address
 
@@ -23,6 +24,9 @@ def resurser(request, adress):
 
     url_r = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/trapphusresurslista?gatuadress=' + adress
 
+    img_barray = 'https: // biztalk.helsingborgshem.se/Integration.Api/dataexport/testclient/testbild?file=testbild'
+    print(img_barray)
+
     if settings.DEBUG == False:
 
         r = requests.get(url_r, proxies=proxyDict)
@@ -35,6 +39,13 @@ def resurser(request, adress):
         filename_r = 'resurslista29.data'
         with open(filename_r, 'rb') as filehandle:
             data_r = pickle.load(filehandle)
+
+        img_barray = 'https: // biztalk.helsingborgshem.se/Integration.Api/dataexport/testclient/testbild?file=testbild'
+        print(img_barray)
+
+        bildfil = 'testbild.array'
+        with open(bildfil, 'wb') as filehandle:
+            pickle.dump(img_barray, filehandle)
 
     context = {
         'resurser': data_r,
