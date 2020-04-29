@@ -221,7 +221,7 @@ footer {
 .busstable tr {
   background: #ffffff;
   border-bottom: #dddddd solid 1px;
-  padding: 0.2rem 0.2rem;
+  padding: 0.4rem 0.4rem;
 }
 
 .busstable td {
@@ -237,7 +237,7 @@ footer {
 .linje_g {
   color: White;
   text-align: center;
-  background-size: 100% 35px;
+  background-size: 100% 20px;
   background-repeat: no-repeat;
   background-position-y: center;
   vertical-align: text-bottom;
