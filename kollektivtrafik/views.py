@@ -71,6 +71,6 @@ def kollektivtrafik(request, lat, lng):
     context = {
         'busstable': busstable
     }
-    # context['autorefreshrate'] = 20
+    context['autorefreshrate'] = 20
 
     return render(request, template_name, context)
