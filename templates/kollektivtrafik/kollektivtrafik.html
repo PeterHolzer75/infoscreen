@@ -23,20 +23,13 @@
             </tr>
         </thead>
         <tbody>
-            {{STATIC_URL}}
             {% for b in busstable %}
             <tr>
-
-                <!-- <td>{{b.LineTypeName}}</td> -->
-
-                {{STATIC_URL}}
-
                 {% if b.LineTypeName == 'Stadsbuss'%}
-                <td class="linje_g"><span>{{b.Name}}</span></td>
+                <td class="linje_g">{{b.Name}}</td>
                 {% else %}
                 <td class="linje_y"><span>{{b.Name}}</span></td>
                 {% endif%}
-
 
                 <td>{{b.From}}</td>
                 <td>{{b.Towards}}</td>

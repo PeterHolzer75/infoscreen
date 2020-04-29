@@ -208,28 +208,8 @@ footer {
 }
 
 .busstable thead {
-  font-weight: 700;
+  font-weight: 100;
   text-align: left;
-}
-
-.linje_g {
-  text-align: center;
-  background-size: 100% 75%;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-image: url("../img/green.jpg");
-}
-
-.linje_y {
-  text-align: center;
-  background-size: 100% 90%;
-  background-repeat: no-repeat;
-  background-image: url("../img/yellow.jpg");
-}
-
-/* Polygon 1 */
-.test-center {
-  text-align: center;
 }
 
 .busstable th {
@@ -244,19 +224,40 @@ footer {
   padding: 0.2rem 0.2rem;
 }
 
-/* .busstable tr:nth-child(even) {
-  background: #c5c5c5;
-} */
 .busstable td {
   padding: 0.13rem;
   font-size: 0.5rem;
   vertical-align: top;
 }
 
-.busstable td span {
-  color: #fff;
+.text-center {
+  text-align: center;
 }
 
+.linje_g {
+  color: White;
+  text-align: center;
+  background-size: 100% 35px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  vertical-align: text-bottom;
+  font-weight: 600;
+  background-image: url("../img/green.jpg");
+}
+
+.linje_y {
+  color: White;
+  text-align: center;
+  background-size: 100% 85%;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  background-image: url("../img/yellow.jpg");
+}
+
+/* Polygon 1 */
+/* .busstable tr:nth-child(even) {
+  background: #c5c5c5;
+} */
 #section1 img {
   width: 100%;
 }

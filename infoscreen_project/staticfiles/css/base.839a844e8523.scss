@@ -20,7 +20,7 @@ $colors: (
   accent: #fff6bb,
   text: #616161,
   st_green: #43b02a,
-  st_yellow: #fec900
+  st_yellow: #fec900,
 );
 
 @function color($color-name) {
@@ -205,8 +205,8 @@ footer {
   background-repeat: no-repeat;
   background-position-y: center;
 
-  // background-image: url("{{STATIC_URL}}img/green.jpg");
-  background-image: url("../img/green.jpg");
+  background-image: url("{{STATIC_URL}}img/green.jpg");
+  // background-image: url("../img/green.jpg");
   // background-image: url("{% static '../img/green.jpg' %}");
 }
 

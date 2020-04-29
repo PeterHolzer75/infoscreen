@@ -7,6 +7,7 @@ app_name = 'kollektivtrafik'
 
 urlpatterns = [
 
-    path('<str:adress>/', views.kollektivtrafik, name='kollektivtrafik'),
-    
+    # path('<str:adress>/', views.kollektivtrafik, name='kollektivtrafik'),
+    path('<str:lat>/<str:lng>/', views.kollektivtrafik, name='kollektivtrafik'),
+
 ]

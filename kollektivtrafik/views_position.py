@@ -12,9 +12,42 @@ import math
 import skanetrafiken as sk
 
 
-def kollektivtrafik(request, lat, lng):
+def kollektivtrafik(request, adress, lat, lng):
+
+    if settings.DEBUG == False:
+        proxyDict = {
+            "http": os.environ.get('FIXIE_URL', ''),
+            "https": os.environ.get('FIXIE_URL', '')
+        }
 
     template_name = 'kollektivtrafik/kollektivtrafik.html'
+    url_adressdata = 'https://biztalk.helsingborgshem.se/integration.api/dataexport/playipptest/objektadressinfo?gatuadress=' + adress
+    #
+
+    # ----------------------------------------------------------------------
+    # Skånetrafiken API
+    # ----------------------------------------------------------------------
+
+    if settings.DEBUG == False:
+        adressdata = requests.get(url_adressdata, proxies=proxyDict)
+        # adressdata = requests.get(url_adressdata)
+        # with open(filename, 'wb') as filehandle:
+        #     #   store the data as binary data stream
+        #     pickle.dump(adressdata, filehandle)
+    else:
+
+        filename = 'adressgronkullagatan.data'
+        with open(filename, 'rb') as filehandle:
+            adressdata = pickle.load(filehandle)
+
+    a = adressdata.json()
+
+    lat = a[0]['Lat']
+    lng = a[0]['Lng']
+
+    if adressdata.status_code != 200:
+        return HttpResponse(f'<h3>Error {adressdata.status_code}: Problem med API för adressdata</h3>')
+
     skr = sk.neareststation(lat, lng, 0)
 
     # Code
@@ -69,8 +102,6 @@ def kollektivtrafik(request, lat, lng):
                               })
 
     context = {
-        'busstable': busstable
+        'busstable': busstable,
     }
-    # context['autorefreshrate'] = 20
-
     return render(request, template_name, context)

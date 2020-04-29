@@ -187,23 +187,48 @@ footer {
   padding: 0rem 0.5rem 0.5rem 0.5rem;
 }
 
+// =================Kollektivtrafiken======================
 .busstable {
   /* margin-top: 0.5rem; */
   font-size: 0.5rem;
   width: 100%;
   border-collapse: collapse;
+
+  thead {
+    font-weight: 100;
+    text-align: left;
+  }
+  th {
+    color: #4d4d4d;
+    padding-bottom: 0.2rem;
+    padding-top: 0.5rem;
+  }
+
+  tr {
+    background: #ffffff;
+    border-bottom: #dddddd solid 1px;
+    padding: 0.2rem 0.2rem;
+  }
+
+  td {
+    padding: 0.13rem;
+    font-size: 0.5rem;
+    vertical-align: top;
+  }
 }
 
-.busstable thead {
-  font-weight: 700;
-  text-align: left;
+.text-center {
+  text-align: center;
 }
 
 .linje_g {
+  color: White;
   text-align: center;
-  background-size: 100% 75%;
+  background-size: 100% 35px;
   background-repeat: no-repeat;
   background-position-y: center;
+  vertical-align: text-bottom;
+  font-weight: 600;
 
   // background-image: url("{{STATIC_URL}}img/green.jpg");
   background-image: url("../img/green.jpg");
@@ -211,44 +236,20 @@ footer {
 }
 
 .linje_y {
+  color: White;
   text-align: center;
-  background-size: 100% 90%;
+  background-size: 100% 85%;
   background-repeat: no-repeat;
+  vertical-align: middle;
   background-image: url("../img/yellow.jpg");
   // background-image: url("{% static '../img/yellow.jpg' %}");
 }
 
 /* Polygon 1 */
 
-.test-center {
-  text-align: center;
-}
-
-.busstable th {
-  color: #4d4d4d;
-  padding-bottom: 0.2rem;
-  padding-top: 0.5rem;
-}
-
-.busstable tr {
-  background: #ffffff;
-  border-bottom: #dddddd solid 1px;
-  padding: 0.2rem 0.2rem;
-}
-
 /* .busstable tr:nth-child(even) {
   background: #c5c5c5;
 } */
-
-.busstable td {
-  padding: 0.13rem;
-
-  font-size: 0.5rem;
-  vertical-align: top;
-  span {
-    color: #fff;
-  }
-}
 
 #section1 img {
   width: 100%;

@@ -217,7 +217,7 @@ footer {
   background-size: 100% 75%;
   background-repeat: no-repeat;
   background-position-y: center;
-  background-image: url("../img/green.jpg");
+  background-image: url("{{STATIC_URL}}img/green.jpg");
 }
 
 .linje_y {
