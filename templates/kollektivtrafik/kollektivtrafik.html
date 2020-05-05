@@ -6,7 +6,7 @@
 <div class="container_kollektivtrafik">
 
     <div class="cardheader">
-        <div class="cardtitle">Bussar</div>
+        <div class="cardtitle"></div>
         <img src="{% static 'img/skanetrafiken.jpg'%}" alt="Logotyp Skånetrafiken">
     </div>
 
@@ -25,9 +25,14 @@
             {% for b in busstable %}
             <tr>
                 {% if b.LineTypeName == 'Stadsbuss'%}
-                <td class="linje_g">{{b.Name}}</td>
+                <td>
+                    <div class="linje_g">{{b.Name}}</div>
+                </td>
+
                 {% else %}
-                <td class="linje_y"><span>{{b.Name}}</span></td>
+                <td>
+                    <div class="linje_y">{{b.Name}}</div>
+                </td>
                 {% endif%}
 
                 <td>{{b.From}}</td>

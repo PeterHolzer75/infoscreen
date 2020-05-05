@@ -1,7 +1,9 @@
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from datetime import datetime
+from datetime import datetime, timedelta
+from pytz import timezone
+import pytz
 from django.conf import settings
 import socket
 import requests
@@ -48,14 +50,22 @@ def kollektivtrafik(request, lat, lng):
     busstable = list()
     now = datetime.now()
 
+    timenow = datetime.now(tz=pytz.timezone('Europe/Copenhagen'))
+    tn = timenow.replace(tzinfo=None)
+
     for sec in jour:
-        # print(sec['SequenceNo'])
         rout = sec['RouteLinks']
+
         for r in rout:
             t = r['DepDateTime']
+
+            print(f't:{t}')
+
             tp = datetime.strptime(t, '%Y-%m-%dT%H:%M:%S')
-            diff = tp - now
+            diff = tp - tn
+
             om_minuter = math.floor(diff.total_seconds() / 60)
+
             if om_minuter < 10:
                 dep_time = f'{om_minuter} min'
             else:

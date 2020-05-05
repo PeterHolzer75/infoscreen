@@ -205,6 +205,9 @@ footer {
   font-size: 0.5rem;
   width: 100%;
   border-collapse: collapse;
+  color: #555555;
+  font-weight: 200;
+  height: auto;
 }
 
 .busstable thead {
@@ -221,13 +224,13 @@ footer {
 .busstable tr {
   background: #ffffff;
   border-bottom: #dddddd solid 1px;
-  padding: 0.4rem 0.4rem;
 }
 
 .busstable td {
   padding: 0.13rem;
   font-size: 0.5rem;
   vertical-align: top;
+  color: coilor(text);
 }
 
 .text-center {
@@ -236,22 +239,29 @@ footer {
 
 .linje_g {
   color: White;
+  font-size: 17px;
+  height: 20px;
+  min-width: 40px;
   text-align: center;
-  background-size: 100% 20px;
-  background-repeat: no-repeat;
-  background-position-y: center;
   vertical-align: text-bottom;
-  font-weight: 600;
-  background-image: url("../img/green.jpg");
+  font-weight: 800;
+  background-color: #7baa20;
+  border-radius: 4px;
+  margin: 1px;
+  padding: 3px;
 }
 
 .linje_y {
   color: White;
-  text-align: center;
-  background-size: 100% 85%;
-  background-repeat: no-repeat;
+  font-size: 15px;
+  height: 20px;
+  text-align: top;
   vertical-align: middle;
-  background-image: url("../img/yellow.jpg");
+  font-weight: 600;
+  background-color: #fec900;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 5px;
 }
 
 /* Polygon 1 */
