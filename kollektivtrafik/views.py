@@ -37,16 +37,6 @@ def kollektivtrafik(request, lat, lng):
 
     jour = rp["Journeys"]  # class list
 
-    # print(type(jour))
-
-    # new_str = json.dumps(jour, indent=2, sort_keys=True)
-    # new_str = json.dumps(jour, indent=2)
-    # print('------------------------------------------------------------------------------------------------------')
-    # print(new_str)
-    # print('------------------------------------------------------------------------------------------------------')
-
-    # print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-
     busstable = list()
     now = datetime.now()
 
@@ -63,9 +53,7 @@ def kollektivtrafik(request, lat, lng):
 
             tp = datetime.strptime(t, '%Y-%m-%dT%H:%M:%S')
             diff = tp - tn
-
             om_minuter = math.floor(diff.total_seconds() / 60)
-
             if om_minuter < 10:
                 dep_time = f'{om_minuter} min'
             else:
